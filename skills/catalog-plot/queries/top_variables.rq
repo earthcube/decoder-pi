@@ -1,0 +1,16 @@
+# Top variableMeasured names by distinct dataset count.
+# Params: LIMIT
+PREFIX schema: <https://schema.org/>
+
+SELECT ?name (COUNT(DISTINCT ?d) AS ?n)
+WHERE {
+  GRAPH ?g {
+    ?d schema:variableMeasured ?vm .
+    ?vm a schema:PropertyValue ;
+        schema:name ?name .
+    FILTER(STRLEN(STR(?name)) > 0)
+  }
+}
+GROUP BY ?name
+ORDER BY DESC(?n)
+LIMIT {{LIMIT}}

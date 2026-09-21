@@ -1,0 +1,24 @@
+{
+  "columns": ["d", "name", "url", "g"],
+  "rows": [
+    {
+      "d": "urn:neon4cast-stac/daily-forecasts:03c604c686",
+      "name": "procHinshelwoodMonod",
+      "url": "https://radiantearth.github.io/stac-browser/#/external/raw.githubusercontent.com/eco4cast/neon4cast-catalog/main/forecasts/Aquatics/Daily_Chlorophyll_a/models/procHinshelwoodMonod.json",
+      "g": "urn:gleaner.io:eco:neon4cast:data:a"
+    },
+    {
+      "d": "urn:neon4cast-stac/daily-forecasts:06ddfea2e0",
+      "name": "GLEON_lm_lag_1day",
+      "url": "https://radiantearth.github.io/stac-browser/#/external/raw.githubusercontent.com/eco4cast/neon4cast-catalog/main/forecasts/Aquatics/Daily_Dissolved_oxygen/models/GLEON_lm_lag_1day.json",
+      "g": "urn:gleaner.io:eco:neon4cast:data:b"
+    },
+    {
+      "d": "urn:neon4cast-stac/daily-forecasts:09b32b5f01",
+      "name": "tg_elasticNet",
+      "url": "https://radiantearth.github.io/stac-browser/#/external/raw.githubusercontent.com/eco4cast/neon4cast-catalog/main/forecasts/Phenology/Daily_Green_chromatic_coordinate/models/tg_elasticNet.json",
+      "g": "urn:gleaner.io:eco:neon4cast:data:c"
+    }
+  ],
+  "count": 3
+}

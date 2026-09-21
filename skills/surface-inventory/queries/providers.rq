@@ -1,0 +1,21 @@
+# Distinct datasets per Gleaner/doos provider slug.
+PREFIX schema: <https://schema.org/>
+
+SELECT ?provider (COUNT(DISTINCT ?d) AS ?n)
+WHERE {
+  GRAPH ?g {
+    ?d a schema:Dataset .
+  }
+  BIND(
+    IF(
+      STRSTARTS(STR(?g), "urn:doos:"),
+      REPLACE(STR(?g), "^urn:doos:", ""),
+      REPLACE(STR(?g), "^urn:gleaner\\.io:[^:]+:([^:]+):.*", "$1")
+    )
+    AS ?provider
+  )
+  FILTER(?provider != STR(?g))
+  FILTER(STRLEN(?provider) > 0)
+}
+GROUP BY ?provider
+ORDER BY DESC(?n)

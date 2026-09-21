@@ -1,0 +1,19 @@
+# Raster/package DataDownload URLs.
+# Params: LIMIT
+PREFIX schema: <https://schema.org/>
+
+SELECT DISTINCT ?fmt ?url ?g
+WHERE {
+  GRAPH ?g {
+    ?dist schema:contentUrl ?url .
+    OPTIONAL { ?dist schema:encodingFormat ?fmt . }
+    FILTER(
+      CONTAINS(LCASE(STR(?fmt)), "tiff")
+      || CONTAINS(LCASE(STR(?fmt)), "geotiff")
+      || CONTAINS(LCASE(STR(?fmt)), "cog")
+      || CONTAINS(LCASE(STR(?fmt)), "geopackage")
+      || CONTAINS(LCASE(STR(?url)), ".tif")
+    )
+  }
+}
+LIMIT {{LIMIT}}

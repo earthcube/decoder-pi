@@ -1,0 +1,13 @@
+# Ecoforecast datasets: name + url (STAC browser links carry theme/model).
+# Params: LIMIT
+PREFIX schema: <https://schema.org/>
+
+SELECT DISTINCT ?d ?name ?url ?g
+WHERE {
+  GRAPH ?g {
+    ?d a schema:Dataset .
+    OPTIONAL { ?d schema:name ?name . }
+    OPTIONAL { ?d schema:url ?url . }
+  }
+}
+LIMIT {{LIMIT}}

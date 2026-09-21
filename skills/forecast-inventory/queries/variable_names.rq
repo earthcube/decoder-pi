@@ -1,0 +1,14 @@
+# variableMeasured names (column inventory, not values).
+PREFIX schema: <https://schema.org/>
+
+SELECT ?name (COUNT(*) AS ?n)
+WHERE {
+  GRAPH ?g {
+    ?vm a schema:PropertyValue ;
+        schema:name ?name .
+    FILTER(STRLEN(STR(?name)) > 0)
+  }
+}
+GROUP BY ?name
+ORDER BY DESC(?n)
+LIMIT {{LIMIT}}

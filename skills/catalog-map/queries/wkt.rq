@@ -1,0 +1,11 @@
+# GeoSPARQL asWKT literals.
+# Params: LIMIT
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+
+SELECT ?s ?wkt ?g
+WHERE {
+  GRAPH ?g {
+    ?s geo:asWKT ?wkt .
+  }
+}
+LIMIT {{LIMIT}}

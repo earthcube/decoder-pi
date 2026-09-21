@@ -1,0 +1,12 @@
+# schema:latitude / longitude pairs.
+# Params: LIMIT
+PREFIX schema: <https://schema.org/>
+
+SELECT ?s ?lat ?lon ?g
+WHERE {
+  GRAPH ?g {
+    ?s schema:latitude ?lat ;
+       schema:longitude ?lon .
+  }
+}
+LIMIT {{LIMIT}}

@@ -1,0 +1,11 @@
+# schema:box literals (space-separated or lat,lon lat,lon).
+# Params: LIMIT
+PREFIX schema: <https://schema.org/>
+
+SELECT ?s ?box ?g
+WHERE {
+  GRAPH ?g {
+    ?s schema:box ?box .
+  }
+}
+LIMIT {{LIMIT}}

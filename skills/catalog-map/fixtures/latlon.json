@@ -1,0 +1,10 @@
+{
+  "columns": ["s", "lat", "lon", "g"],
+  "rows": [
+    {"s": "a", "lat": "-49.84", "lon": "20.0022", "g": "urn:gleaner.io:eco:cchdo:data:x"},
+    {"s": "b", "lat": "-70.23", "lon": "-6.1295", "g": "urn:gleaner.io:eco:cchdo:data:x"},
+    {"s": "c", "lat": "39.1008", "lon": "-96.5631", "g": "urn:gleaner.io:eco:neon4cast:data:y"},
+    {"s": "d", "lat": "31.8539", "lon": "-88.1612", "g": "urn:gleaner.io:eco:neon4cast:data:y"}
+  ],
+  "count": 4
+}

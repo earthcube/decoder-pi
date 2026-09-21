@@ -1,0 +1,12 @@
+# DataDownload encodingFormat counts.
+PREFIX schema: <https://schema.org/>
+
+SELECT ?fmt (COUNT(*) AS ?n)
+WHERE {
+  GRAPH ?g {
+    ?dist schema:encodingFormat ?fmt .
+  }
+}
+GROUP BY ?fmt
+ORDER BY DESC(?n)
+LIMIT {{LIMIT}}

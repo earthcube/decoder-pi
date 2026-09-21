@@ -1,0 +1,13 @@
+# Hydrography90m dataset names (encode bbox + tile id).
+# Params: LIMIT
+PREFIX schema: <https://schema.org/>
+
+SELECT DISTINCT ?d ?name ?g
+WHERE {
+  GRAPH ?g {
+    ?d a schema:Dataset ;
+       schema:name ?name .
+  }
+  FILTER(CONTAINS(STR(?g), "hydrography90m"))
+}
+LIMIT {{LIMIT}}

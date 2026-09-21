@@ -1,0 +1,16 @@
+# Hydrography GeoTIFF contentUrls (layer + tile in filename).
+# Params: LIMIT
+PREFIX schema: <https://schema.org/>
+
+SELECT DISTINCT ?name ?url ?g
+WHERE {
+  GRAPH ?g {
+    ?d a schema:Dataset ;
+       schema:name ?name ;
+       schema:distribution ?dist .
+    ?dist schema:contentUrl ?url .
+  }
+  FILTER(CONTAINS(STR(?g), "hydrography90m"))
+  FILTER(CONTAINS(LCASE(STR(?url)), ".tif"))
+}
+LIMIT {{LIMIT}}

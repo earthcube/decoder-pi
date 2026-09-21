@@ -1,0 +1,16 @@
+{
+  "columns": ["name", "url", "g"],
+  "rows": [
+    {
+      "name": "hydrography.org dataset for bounding box (40 -80 20 -60) {tile h10v04}",
+      "url": "https://public.igb-berlin.de/index.php/s/x/download?path=%2Fr.watershed%2Faccumulation_tiles20d&files=accumulation_h10v04.tif",
+      "g": "urn:gleaner.io:eco:hydrography90m:data:a"
+    },
+    {
+      "name": "hydrography.org dataset for bounding box (40 -80 20 -60) {tile h10v04}",
+      "url": "https://public.igb-berlin.de/index.php/s/x/download?path=%2Fflow.index%2Fcti_tiles20d&files=cti_h10v04.tif",
+      "g": "urn:gleaner.io:eco:hydrography90m:data:a"
+    }
+  ],
+  "count": 2
+}

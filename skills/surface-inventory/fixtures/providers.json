@@ -1,0 +1,9 @@
+{
+  "columns": ["provider", "n"],
+  "rows": [
+    {"provider": "hydrography90m", "n": "123"},
+    {"provider": "aiesd", "n": "78"},
+    {"provider": "geochemistry_custom", "n": "36"}
+  ],
+  "count": 3
+}

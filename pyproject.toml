@@ -1,0 +1,6 @@
+[project]
+name = "decoder-pi"
+version = "0.1.0"
+description = "Pi coding-agent harness with in-repo skills"
+requires-python = ">=3.11"
+dependencies = ["SPARQLWrapper", "matplotlib", "pyarrow"]

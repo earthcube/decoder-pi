@@ -1,0 +1,11 @@
+{
+  "columns": ["name", "n"],
+  "rows": [
+    {"name": "datetime", "n": "337"},
+    {"name": "site_id", "n": "337"},
+    {"name": "model_id", "n": "301"},
+    {"name": "prediction", "n": "226"},
+    {"name": "crps", "n": "100"}
+  ],
+  "count": 5
+}

@@ -1,0 +1,10 @@
+{
+  "columns": ["d", "name", "kw", "g"],
+  "rows": [
+    {"d": "d1", "name": "hydrography.org dataset for bounding box (40 -80 20 -60) {tile h10v04}", "kw": "hydrography", "g": "urn:gleaner.io:eco:hydrography90m:data:x"},
+    {"d": "d2", "name": "CHELSA-daily (V2.1)", "kw": "CHELSA", "g": "urn:gleaner.io:eco:aiesd:data:y"},
+    {"d": "d3", "name": "NALCMS land cover", "kw": "land cover", "g": "urn:gleaner.io:eco:aiesd:data:z"},
+    {"d": "d4", "name": "GLHYMPS 2.0", "kw": "AI-generated metadata", "g": "urn:gleaner.io:eco:geochemistry_custom:data:w"}
+  ],
+  "count": 4
+}

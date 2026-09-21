@@ -1,0 +1,11 @@
+{
+  "columns": ["name", "n"],
+  "rows": [
+    {"name": "depth", "n": "8344"},
+    {"name": "DepBelowSurf", "n": "7273"},
+    {"name": "time", "n": "3236"},
+    {"name": "pressure", "n": "2618"},
+    {"name": "ctd_temperature", "n": "2330"}
+  ],
+  "count": 5
+}

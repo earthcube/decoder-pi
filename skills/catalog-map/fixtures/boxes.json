@@ -1,0 +1,8 @@
+{
+  "columns": ["s", "box", "g"],
+  "rows": [
+    {"s": "emodnet", "box": "-11.131832 3.102938 49.223235 61.554749", "g": "urn:gleaner.io:eco:emodnet:data:x"},
+    {"s": "neon", "box": "29.6893,-96.5631 39.1008,-76.56", "g": "urn:gleaner.io:eco:neon4cast:data:y"}
+  ],
+  "count": 2
+}

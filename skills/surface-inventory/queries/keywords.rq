@@ -1,0 +1,14 @@
+# Dataset keywords.
+# Params: LIMIT
+PREFIX schema: <https://schema.org/>
+
+SELECT ?kw (COUNT(DISTINCT ?d) AS ?n)
+WHERE {
+  GRAPH ?g {
+    ?d a schema:Dataset ;
+       schema:keywords ?kw .
+  }
+}
+GROUP BY ?kw
+ORDER BY DESC(?n)
+LIMIT {{LIMIT}}

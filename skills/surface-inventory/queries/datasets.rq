@@ -1,0 +1,13 @@
+# Dataset name + optional keyword + graph (for theme classification).
+# Params: LIMIT
+PREFIX schema: <https://schema.org/>
+
+SELECT DISTINCT ?d ?name ?kw ?g
+WHERE {
+  GRAPH ?g {
+    ?d a schema:Dataset .
+    OPTIONAL { ?d schema:name ?name . }
+    OPTIONAL { ?d schema:keywords ?kw . }
+  }
+}
+LIMIT {{LIMIT}}

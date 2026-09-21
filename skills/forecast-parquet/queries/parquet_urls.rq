@@ -1,0 +1,13 @@
+# Distinct parquet DataDownload contentUrls.
+# Params: LIMIT
+PREFIX schema: <https://schema.org/>
+
+SELECT DISTINCT ?url
+WHERE {
+  GRAPH ?g {
+    ?dist schema:encodingFormat ?fmt ;
+          schema:contentUrl ?url .
+    FILTER(LCASE(STR(?fmt)) = "application/x-parquet")
+  }
+}
+LIMIT {{LIMIT}}

@@ -1,0 +1,16 @@
+{
+  "columns": ["s", "wkt", "g"],
+  "rows": [
+    {
+      "s": "cruise",
+      "wkt": "MULTIPOINT((-57.9067 -62.3317), (-54.79 -62.155), (-48.0967 -61.6017))",
+      "g": "https://gleaner.io/enhancement/spatial/cchdo"
+    },
+    {
+      "s": "footprint",
+      "wkt": "POLYGON((-96.5631 29.6893, -76.56 29.6893, -76.56 39.1008, -96.5631 39.1008, -96.5631 29.6893))",
+      "g": "https://gleaner.io/enhancement/spatial/neon4cast"
+    }
+  ],
+  "count": 2
+}

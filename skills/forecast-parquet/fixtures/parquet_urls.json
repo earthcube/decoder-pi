@@ -1,0 +1,12 @@
+{
+  "columns": ["url"],
+  "rows": [
+    {
+      "url": "s3://anonymous@bio230014-bucket01/challenges/scores/bundled-parquet/project_id=neon4cast/duration=P1W/variable=amblyomma_americanum/model_id=tg_tbats?endpoint_override=sdsc.osn.xsede.org"
+    },
+    {
+      "url": "s3://anonymous@bio230014-bucket01/challenges/forecasts/bundled-summaries/project_id=neon4cast/duration=P1D/variable=chla/model_id=cb_prophet?endpoint_override=sdsc.osn.xsede.org"
+    }
+  ],
+  "count": 2
+}

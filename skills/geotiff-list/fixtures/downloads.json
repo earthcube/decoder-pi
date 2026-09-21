@@ -1,0 +1,16 @@
+{
+  "columns": ["fmt", "url", "g"],
+  "rows": [
+    {
+      "fmt": "[image/tiff]",
+      "url": "https://public.igb-berlin.de/index.php/s/x/download?path=%2Fr.watershed%2Faccumulation_tiles20d&files=accumulation_h10v04.tif",
+      "g": "urn:gleaner.io:eco:hydrography90m:data:a"
+    },
+    {
+      "fmt": "application/geotiff",
+      "url": "https://example.org/other.tif",
+      "g": "urn:gleaner.io:eco:aiesd:data:b"
+    }
+  ],
+  "count": 2
+}

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+if ! command -v pi >/dev/null 2>&1; then
+  echo "pi is not on PATH. Install the Pi coding agent first." >&2
+  exit 1
+fi
+
+exec pi --no-skills -e "$ROOT/extensions/load-skills.ts" "$@"
