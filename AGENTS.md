@@ -10,7 +10,7 @@ Skills:
 - `skills/catalog-plot` — bars / depth hist / min–max strips from SPARQL JSON.
 - `skills/catalog-map` — lat/lon, schema:box, WKT, coastlines, haversine `near`.
 - `skills/forecast-inventory` — ecoforecast catalog (themes, models, columns).
-- `skills/forecast-parquet` — SPARQL finds parquet URL, HTTP GET, plot CRPS/mean.
+- `skills/forecast-parquet` — SPARQL finds parquet URL, HTTP GET, plot CRPS/mean or one lead (`horizon`).
 - `skills/surface-inventory` — earthsurface catalog (providers, themes, formats).
 - `skills/hydrography-tiles` — 20° hydrography.org tile grid / lookup / layers.
 - `skills/geotiff-list` — list GeoTIFF URLs; does not download rasters.

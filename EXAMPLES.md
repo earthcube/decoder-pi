@@ -42,7 +42,7 @@ sparql  →  table/JSON
 sparql  →  table/JSON
             ├─ forecast-inventory  (themes, models, columns, sites-map)
             ├─ catalog-map         (points, boxes, WKT, near) on this graph only
-            └─ forecast-parquet    (list URL → GET one file → series)
+            └─ forecast-parquet    (list URL → GET one file → series, or one lead)
 ```
 
 `catalog-plot depth-hist` / `depth-ranges` belong on deepoceans. `forecast-*`
@@ -67,7 +67,7 @@ These stores are **discovery catalogs**. They do not hold CTD casts, CHELSA rast
 | Graph | Numeric / spatial you can use | What it is *not* |
 |---|---|---|
 | deepoceans | `DepBelowSurf` min/max (~4.8k datasets, almost all `urn:doos:obis`); CCHDO lat/lon (~38.6k pairs) and `MULTIPOINT` tracks; claimed `variableMeasured` names | Water-column time series; Argo/BCO-DMO point maps (those providers barely appear in lat/lon) |
-| ecoforecast | Parquet **scores** (`crps`, `observation`, `mean`, quantiles) and **forecast summaries**; NEON site coordinates | CRPS in SPARQL; a global “best model” ranking from one file |
+| ecoforecast | Parquet **scores** (`crps`, `observation`, `mean`, quantiles), a single lead via `forecast-parquet horizon`, and **forecast summaries**; NEON site coordinates | CRPS in SPARQL; a global “best model” ranking from one file |
 | earthsurface | 20° hydrography tile bboxes/WKT; GeoTIFF **URLs** (accumulation, CTI, channel elevation); CHELSA **names + units** | Climate time series; GLORICH chemistry values; plottable 90 m rasters in-session |
 
 Do **not** add skills that would: join the three graphs, histogram `temporalCoverage` (many `None/None` and implausible years), treat hydrography `wet_weight`/`cruiseid` as data, or download 90 m GeoTIFFs by default.
@@ -275,9 +275,66 @@ Do not query deepoceans.
 **Skills:** `forecast-inventory` → `forecast-parquet`  
 **Expect:** a theme bar; a short URL list of OSN `s3://anonymous@…` prefixes;
 a CRPS line chart. SPARQL must not be treated as the source of CRPS numbers.
+That line stacks every issue date on its target date. Example 9b keeps one lead.
 
 Chlorophyll summary variant (still ecoforecast): `--contains 'variable=chla' --y mean`
 (forecast `bundled-summaries`, not scores).
+
+---
+
+## 9b. One lead at a time (forecast-parquet horizon)
+
+`plot` draws every issue date that lands on a target date as one line. A lead is
+`datetime` minus `reference_datetime`, in whole days. `horizon` keeps one lead,
+so each target date is one stored CRPS. The score is neon4cast's. This command
+does not build a forecast distribution or evaluate the CRPS integral.
+
+**Prompt**
+
+```text
+Endpoint https://qlever.geocodes-aws.earthcube.org/graphspace/ecoforecast.
+
+1. forecast-parquet list --contains 'variable=amblyomma_americanum/model_id=tg_tbats' --limit 5
+2. On that scores URL, with no --lead:
+   forecast-parquet horizon --url … --site TALL --y crps
+   This prints scored-row counts by lead and does not write a PNG.
+3. Choose the shortest positive lead whose duplicate_targets is 0 and whose
+   scored_rows is at least 5. Then:
+   forecast-parquet horizon --url … --site TALL --y crps --lead <N>
+   → runs/ex9b-horizon.png
+
+Explain in the reply:
+- CRPS is the value stored by neon4cast scoring, not recomputed here.
+- The PNG is one model (tg_tbats), one variable (amblyomma_americanum), one
+  site (TALL), and one lead. It is not a model ranking.
+- Say the lead in days, how many target dates were plotted, the min and max
+  CRPS, and any gap larger than the usual step between targets.
+- A handful of target dates does not support a seasonal claim.
+- If a lead's duplicate_targets is greater than 0, that target was scored
+  more than once (often a new pub_datetime). Do not average those rows.
+
+Download one parquet object. Do not query deepoceans or earthsurface.
+```
+
+**Skills:** `forecast-parquet` (`horizon`)  
+**Expect:** a lead table for TALL, then a short marked CRPS series at one lead.
+On the ticks scores file, most leads have only a few target dates, and a few
+long leads have two scores for the same target. The chosen lead has
+`duplicate_targets` 0.
+
+Offline, the same filter on a synthetic file (no endpoint):
+
+```text
+Do not call any SPARQL endpoint.
+
+forecast-parquet horizon --from-parquet skills/forecast-parquet/fixtures/scores_horizon.parquet --site TALL
+then forecast-parquet horizon --from-parquet skills/forecast-parquet/fixtures/scores_horizon.parquet --site TALL --lead 7 --y crps
+→ runs/ex9b-horizon-offline.png
+
+The fixture is synthetic. Lead 7 at TALL has five target dates and one gap
+(three weeks between 2024-06-17 and 2024-07-08). Say that the gap is not
+filled in. Lead 14 is a different series and must not appear on this PNG.
+```
 
 ---
 
@@ -428,7 +485,7 @@ This is metadata proximity to the HOT site, not HOT bottle data.
 
 ## E1. EFI forecast skill at one NEON site (CRPS)
 
-Scores parquet holds real `crps` / `observation` / `mean`. One model, one site is a valid verification slice — not a leaderboard.
+Scores parquet holds real `crps` / `observation` / `mean`. One model, one site is a valid verification slice — not a leaderboard. `plot` stacks every lead on the target date. For one lead, use example 9b (`horizon`).
 
 ```text
 Endpoint https://qlever.geocodes-aws.earthcube.org/graphspace/ecoforecast.

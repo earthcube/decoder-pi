@@ -54,7 +54,7 @@ uv run python skills/forecast-inventory/scripts/inventory.py sites-map \
 | `columns` | markdown table of variableMeasured names (no PNG) |
 | `sites-map` | delegates to `catalog-map points` |
 
-For CRPS / mean time series from the parquet `contentUrl`, use **`forecast-parquet`**.
+For CRPS / mean time series from the parquet `contentUrl`, use **`forecast-parquet`**. For one lead (one score per target date), use `forecast-parquet horizon`.
 
 ## Do not
 

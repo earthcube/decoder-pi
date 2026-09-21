@@ -67,7 +67,7 @@ decoder-pi/
 │   ├── catalog-plot/              # bars, depth hist/ranges
 │   ├── catalog-map/               # lat/lon, box, WKT, coastlines, near
 │   ├── forecast-inventory/        # ecoforecast catalog
-│   ├── forecast-parquet/          # parquet CRPS / mean series
+│   ├── forecast-parquet/          # parquet CRPS / mean, or one lead
 │   ├── surface-inventory/         # earthsurface catalog
 │   ├── hydrography-tiles/         # 20° hydrography tile index
 │   └── geotiff-list/              # raster URL table (no download)
@@ -117,6 +117,9 @@ uv run python skills/catalog-map/scripts/map.py near --endpoint $EP --lat -62 --
 uv run python skills/forecast-inventory/scripts/inventory.py themes --endpoint $EF
 uv run python skills/forecast-parquet/scripts/parquet_plot.py plot \
   --endpoint $EF --contains 'scores/bundled-parquet' --y crps --site TALL
+uv run python skills/forecast-parquet/scripts/parquet_plot.py horizon \
+  --from-parquet skills/forecast-parquet/fixtures/scores_horizon.parquet \
+  --site TALL --lead 7 --y crps
 ```
 
 Offline fixtures:
