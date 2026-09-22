@@ -29,6 +29,10 @@ uv sync --group aidrin
 Leave the separate `[agentic]` extra off unless you intentionally want that
 pipeline (needs an API key).
 
+A session that finds one ecoforecast scores parquet, keeps one site and one
+lead, and scores that file with these tools is in
+[`AIDRIN_EXAMPLE.md`](AIDRIN_EXAMPLE.md).
+
 ### Skills launcher
 
 From this repo (loads every `SKILL.md` under `skills/`):
