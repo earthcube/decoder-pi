@@ -2,6 +2,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT"
 
 if ! command -v pi >/dev/null 2>&1; then
   echo "pi is not on PATH. Install the Pi coding agent first." >&2

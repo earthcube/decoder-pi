@@ -4,3 +4,8 @@ version = "0.1.0"
 description = "Pi coding-agent harness with in-repo skills"
 requires-python = ">=3.11"
 dependencies = ["SPARQLWrapper", "matplotlib", "pyarrow"]
+
+[dependency-groups]
+# Fat stack (Flask/Celery/… plus MCP/LLM bits). Sync only when wiring AIDRIN:
+#   uv sync --group aidrin
+aidrin = ["aidrin[mcp]"]
