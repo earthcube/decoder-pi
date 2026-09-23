@@ -1,7 +1,10 @@
 # AIDRIN example: score one forecast file
 
-Yes. This harness can evaluate the AI readiness of **one local table**, and the
-table it can both find and score is an EFI/neon4cast parquet.
+Yes. This harness can evaluate the AI readiness of **one local table**.
+Two catalogs expose one. Ecoforecast parquet `DataDownload` URLs are in
+sections A and B. Deepoceans `text/csv` distributions are in section C.
+Earthsurface distribution links are rasters, search APIs, and directory
+listings; they do not hand AIDRIN a table.
 
 The Pi skills discover the file. The AIDRIN MCP server scores it. SPARQL
 catalogs, maps, and GeoTIFF URL lists stay on their own skills. AIDRIN reads a
@@ -245,3 +248,181 @@ needs a domain reading.
 
 The report is advisory. AIDRIN does not check that a CRPS was computed
 correctly, and this harness does not recompute it either.
+
+---
+
+## C. Deepoceans CSV distributions
+
+Stay on `https://qlever.geocodes-aws.earthcube.org/graphspace/deepoceans`.
+The format inventory is `skills/surface-inventory/queries/formats.rq` (any
+endpoint). On 2026-09-22 that graph had about 8,470 distinct `text/csv`
+`contentUrl`s and about 3,100 NetCDF URLs. NetCDF is outside AIDRIN's reader
+list. CSV is in it, in two dialects.
+
+| Dialect | How the URL looks | What AIDRIN does |
+|---|---|---|
+| BCO-DMO plain CSV | `https://datadocs.bco-dmo.org/file/…/*.csv` | Reads it. A token such as `nd` is text, so completeness stays 1. |
+| CCHDO WHP exchange | `https://cchdo.ucsd.edu/data/<id>/*_hy1.csv` | Refuses the raw file. The comment block is not a rectangular CSV. |
+
+`schema:distribution` → `schema:encodingFormat` + `schema:contentUrl` is the
+same pattern as `skills/forecast-parquet/queries/parquet_urls.rq` and
+`skills/geotiff-list/queries/downloads.rq`. Use `sparql query` (the `query`
+subcommand has no `--limit`; put `LIMIT` in the SPARQL).
+
+### Prompt: find CSV distribution links
+
+```text
+Endpoint https://qlever.geocodes-aws.earthcube.org/graphspace/deepoceans.
+Do not query ecoforecast or earthsurface.
+
+1. sparql file skills/surface-inventory/queries/formats.rq --limit 15
+2. sparql query, --show-query, for distinct schema:Dataset name and
+   schema:contentUrl where schema:distribution / schema:encodingFormat is
+   text/csv. LIMIT 20.
+3. Split the URLs into cchdo.ucsd.edu and datadocs.bco-dmo.org.
+   Print names and URLs. Do not download yet.
+```
+
+### Prompt: one CCHDO bottle file, then AIDRIN
+
+The worked file is Hydrographic Cruise OMEX2, bottle dataset,
+`https://cchdo.ucsd.edu/data/49/OMEX2_hy1.csv` (458 KiB, 2,016 bottles).
+AIDRIN 2026.8.2 on the raw bytes:
+
+`Error tokenizing data. C error: Expected 2 fields in line 34, saw 3`
+
+The parameter header is the line that starts `EXPOCODE,`. The next line is
+units. Data ends at `END_DATA`. Missing measurements are `-999`. Map those to
+null before scoring. `DATE` is `YYYYMMDD`; parse a `sample_date` column before
+`temporal-completeness`. A report from that prepared file is
+`runs/aidrin-omex2-bottle.md`.
+
+```text
+Endpoint https://qlever.geocodes-aws.earthcube.org/graphspace/deepoceans.
+Do not query ecoforecast or earthsurface. Download one CSV.
+
+1. sparql query for one text/csv contentUrl whose name contains
+   "OMEX2" and "Bottle". Expect
+   https://cchdo.ucsd.edu/data/49/OMEX2_hy1.csv
+2. GET that URL (it redirects). Save the raw file under /tmp.
+3. Confirm aidrin summarize on the raw file fails with a CSV tokenize error.
+4. Write /tmp/decoder-pi-OMEX2-bottle.csv:
+   header = the EXPOCODE line, drop the units line and comment lines,
+   stop at END_DATA, replace -999 with null, parse DATE (YYYYMMDD) into
+   sample_date.
+5. On that CSV, AIDRIN MCP:
+   summarize_dataset, run_data_quality_check,
+   row-level-completeness on DATE,LATITUDE,LONGITUDE,CTDPRS,CTDTMP,CTDSAL,
+   row-level-completeness on CTDTMP,CTDSAL,OXYGEN,NITRAT,PHSPHT,SILCAT,
+   duplicity-by-features on EXPOCODE,STNNBR,CASTNO,BTLNBR,
+   temporal-completeness on sample_date frequency D,
+   constant-feature-count, max-pairwise-correlation, skewness, kurtosis.
+   feature-relevance with target_column NITRAT,
+   num_columns CTDPRS,CTDTMP,CTDSAL,LATITUDE,LONGITUDE,
+   cat_columns EXPOCODE.
+6. Write runs/aidrin-omex2-bottle.md.
+
+Say that overall completeness averages flag columns, which are filled even
+when the measurement is null (WOCE flag 9). CTDTMP and THETA are one
+temperature. Daily temporal completeness describes cruise occupations across
+1997–1999, not a daily series. Leave the ready-or-not judgment to the reader.
+Do not run fairness, privacy, or the agentic tools.
+```
+
+### Prompt: one plain BCO-DMO CSV (summary, too small)
+
+Use this when you want AIDRIN to read the URL with no exchange parser, and
+you want the failure mode. `https://datadocs.bco-dmo.org/file/JEE1M8WsAR064g/averages.csv`
+is 15 rows. `nd` is the modal value of the rate columns, and AIDRIN still
+reports completeness 1.0 because `nd` is text. It is not an observation
+table. The next prompt is the one to score.
+
+```text
+Endpoint https://qlever.geocodes-aws.earthcube.org/graphspace/deepoceans.
+
+1. sparql query for a text/csv contentUrl on datadocs.bco-dmo.org whose
+   name contains "15NO3" and "average". 
+2. Download that one CSV to /tmp and summarize_dataset plus
+   run_data_quality_check.
+3. In the report, list columns whose most common value is the string nd.
+   Those are missing measurements that completeness counted as present.
+   Do not treat overall completeness 1.0 as a full rate table.
+Stay on deepoceans. One file.
+```
+
+### Prompt: one BCO-DMO CTD table (AIDRIN reads it; completeness still lies)
+
+This is the additional demo. Georges Bank CTD casts from EN321 and EN325,
+`https://datadocs.bco-dmo.org/file/JEE1nM2F1NO116/ctd_dg.csv` (1.42 MB).
+One row is one pressure bin. AIDRIN 2026.8.2 reads the raw CSV. No exchange
+parser. The file is large enough for the quality and structure checks, and
+it still hides a whole cruise behind the string `nd`.
+
+Do not use earthsurface rasters, CCHDO exchange files, or this CTD file for
+fairness, k-anonymity, or HIPAA. `cruiseid` is a cruise code. The
+representation-rate payload calls it a sensitive feature; that wording is
+the tool's, not a fairness audit.
+
+```text
+Endpoint https://qlever.geocodes-aws.earthcube.org/graphspace/deepoceans.
+Do not query ecoforecast or earthsurface. Download one CSV.
+
+1. sparql query, --show-query, for a text/csv contentUrl on
+   datadocs.bco-dmo.org whose dataset name contains "CTD" and "EN321".
+   Expect https://datadocs.bco-dmo.org/file/JEE1nM2F1NO116/ctd_dg.csv
+2. Download that file to /tmp/ctd_dg.csv. Pass that absolute path to AIDRIN.
+   Do not pass the URL.
+3. summarize_dataset and run_data_quality_check.
+4. List columns whose most common value is the string nd, with the count.
+   Then count those nd rows by cruiseid. Do not treat overall completeness
+   1.0 as complete oxygen, transmittance, sigma-t, or nbin.
+5. On the same file, call:
+   - run_aidrin_metric constant-feature-count
+   - run_aidrin_metric duplicity-by-features
+     duplicate_columns=cruiseid,cast,press
+   - run_aidrin_metric representation-rate columns=cruiseid
+6. Write runs/aidrin-ctd-dg.md. Include the path, row count, and the JSON
+   scores.
+
+Say, in prose:
+
+- Identical-row duplicity is 0. cruiseid+cast+press is not a unique key.
+  Quote the duplicate count. Do not invent a cause.
+- Outliers ran only on columns read as numbers. nd columns are absent from
+  that block. A salinity outlier rate is a spread across casts, not a
+  broken sensor, unless the values say otherwise.
+- year is constant because both cruises are 1999. That is expected.
+- representation-rate on cruiseid is a count ratio of two cruise codes.
+  Do not call it a fairness result.
+- Leave the ready-or-not judgment to the reader.
+
+Do not run class-imbalance, statistical-rates, k-anonymity, hipaa-compliance,
+feature-relevance, or the agentic tools. Do not build a timestamp from
+month_gmt, day_gmt, and time_gmt unless you also say those three columns were
+parsed as numbers. One file.
+```
+
+**Expect (AIDRIN 2026.8.2, this file, 12,169 × 18):**
+
+`summarize_dataset` puts `trans`, `sigma_t`, `o2`, and `nbin` in
+`categorical` because `nd` is text. Each of those four has top value `nd`
+at 3,636. Every one of those 3,636 rows is cruise `EN325` (3,636 of 3,636).
+`EN321` (8,533 rows) has none of those `nd` values. `cruiseid` has two
+values. `year` is the only constant feature (1999).
+
+| Check | Score |
+|---|---|
+| Overall completeness | 1.0 (every column, including the four `nd` columns) |
+| Identical-row duplicity | 0 |
+| `duplicity-by-features` on `cruiseid,cast,press` | 440 rows, 3.62% |
+| Overall outlier rate | 0.0119 |
+| Outlier rate on `sal` | 0.1272 |
+| Outlier rate on `press` / `lon` | 0.0145 / 0.0072 |
+| `trans`, `sigma_t`, `o2`, `nbin` in the outlier block | absent |
+| Constant features | `year` = 1999 |
+| Representation ratio `EN321` to `EN325` | 2.347 |
+
+The outlier block also includes `temp` (about 0.0009) and `flvolt` (about
+0.0044). `cond` and `par_v` score 0. `month_gmt`, `day_gmt`, and `time_gmt`
+are numeric in this read (`time_gmt` runs from 27.32 to 2354.43). Do not
+pass them to `temporal-completeness` as a clock.

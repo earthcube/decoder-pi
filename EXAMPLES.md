@@ -556,4 +556,4 @@ Do not invent numeric climatologies. Do not download CHELSA rasters.
 - One parquet object per plot; 80 MiB download cap.
 - If a step returns 0 rows, say so and skip the PNG rather than fabricating data.
 - **Never mix deepoceans, ecoforecast, and earthsurface in one chain.** They are unrelated catalogs.
-- Scoring one ecoforecast scores file for AI readiness is a separate prompt: [`AIDRIN_EXAMPLE.md`](AIDRIN_EXAMPLE.md).
+- Scoring one ecoforecast scores file, or one deepoceans CSV distribution, for AI readiness is a separate prompt: [`AIDRIN_EXAMPLE.md`](AIDRIN_EXAMPLE.md).
