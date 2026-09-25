@@ -1,0 +1,263 @@
+{
+  "@id": "https://cchdo.ucsd.edu/cruise/33RR20160208#bottle",
+  "@type": "Dataset",
+  "description": "Bottle (discrete sample) data from the hydrographic cruise 33RR20160208",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "contentSize": "1899562 bytes",
+      "contentUrl": "https://cchdo.ucsd.edu/data/27121/33RR20160208_hy1.csv",
+      "encodingFormat": "text/csv",
+      "name": "exchange"
+    },
+    {
+      "@type": "DataDownload",
+      "contentSize": "888130 bytes",
+      "contentUrl": "https://cchdo.ucsd.edu/data/27122/33RR20160208_nc_hyd.zip",
+      "encodingFormat": "application/zip",
+      "name": "whp_netcdf"
+    },
+    {
+      "@type": "DataDownload",
+      "contentSize": "701952 bytes",
+      "contentUrl": "https://cchdo.ucsd.edu/data/27123/33RR20160208hy.txt",
+      "encodingFormat": "text/plain",
+      "name": "woce"
+    },
+    {
+      "@type": "DataDownload",
+      "contentSize": "842156 bytes",
+      "contentUrl": "https://cchdo.ucsd.edu/data/38395/33RR20160208_bottle.nc",
+      "encodingFormat": "application/x-netcdf",
+      "name": "cf_netcdf"
+    }
+  ],
+  "isAccessibleForFree": true,
+  "name": "US GO-SHIP Hydrographic Cruise 33RR20160208: Bottle Dataset",
+  "provider": {
+    "@id": "https://cchdo.ucsd.edu"
+  },
+  "publisher": {
+    "@id": "https://cchdo.ucsd.edu",
+    "@type": "Organization",
+    "name": "CCHDO",
+    "url": "https://cchdo.ucsd.edu"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "-66.6027 78.0101 -28.318 95.013",
+      "elevation": -4808
+    }
+  },
+  "temporalCoverage": "2016-02-19/2016-03-11",
+  "variableMeasured": [
+    {
+      "@type": "PropertyValue",
+      "maxValue": 1457729700,
+      "minValue": 1455861420,
+      "name": "time",
+      "propertyID": "http://vocab.nerc.ac.uk/standard_name/time"
+    },
+    {
+      "@type": "PropertyValue",
+      "maxValue": -28.318,
+      "minValue": -66.6027,
+      "name": "latitude",
+      "propertyID": "http://vocab.nerc.ac.uk/standard_name/latitude",
+      "unitText": "degree_north"
+    },
+    {
+      "@type": "PropertyValue",
+      "maxValue": 95.0129,
+      "minValue": 78.0102,
+      "name": "longitude",
+      "propertyID": "http://vocab.nerc.ac.uk/standard_name/longitude",
+      "unitText": "degree_east"
+    },
+    {
+      "@type": "PropertyValue",
+      "maxValue": 4870.0,
+      "minValue": 468.0,
+      "name": "btm_depth",
+      "propertyID": "http://vocab.nerc.ac.uk/standard_name/sea_floor_depth_below_sea_surface",
+      "unitText": "meters"
+    },
+    {
+      "@type": "PropertyValue",
+      "maxValue": 4907.5,
+      "minValue": 1.0,
+      "name": "pressure",
+      "propertyID": "http://vocab.nerc.ac.uk/standard_name/sea_water_pressure",
+      "unitText": "dbar"
+    },
+    {
+      "@type": "PropertyValue",
+      "maxValue": 23.952,
+      "minValue": -1.8167,
+      "name": "ctd_temperature",
+      "propertyID": "http://vocab.nerc.ac.uk/standard_name/sea_water_temperature",
+      "unitText": "degC"
+    },
+    {
+      "@type": "PropertyValue",
+      "maxValue": 36.0204,
+      "minValue": 32.8004,
+      "name": "ctd_salinity",
+      "propertyID": "http://vocab.nerc.ac.uk/standard_name/sea_water_practical_salinity",
+      "unitText": "1"
+    },
+    {
+      "@type": "PropertyValue",
+      "maxValue": 36.018,
+      "minValue": 32.8006,
+      "name": "bottle_salinity",
+      "propertyID": "http://vocab.nerc.ac.uk/standard_name/sea_water_practical_salinity",
+      "unitText": "1"
+    },
+    {
+      "@type": "PropertyValue",
+      "maxValue": 364.1,
+      "minValue": 145.5,
+      "name": "ctd_oxygen",
+      "propertyID": "http://vocab.nerc.ac.uk/standard_name/moles_of_oxygen_per_unit_mass_in_sea_water",
+      "unitText": "umol/kg"
+    },
+    {
+      "@type": "PropertyValue",
+      "maxValue": 362.6,
+      "minValue": 144.7,
+      "name": "oxygen",
+      "propertyID": "http://vocab.nerc.ac.uk/standard_name/moles_of_oxygen_per_unit_mass_in_sea_water",
+      "unitText": "umol/kg"
+    },
+    {
+      "@type": "PropertyValue",
+      "maxValue": 142.4,
+      "minValue": 0.0,
+      "name": "silicate",
+      "propertyID": "http://vocab.nerc.ac.uk/standard_name/moles_of_silicate_per_unit_mass_in_sea_water",
+      "unitText": "umol/kg"
+    },
+    {
+      "@type": "PropertyValue",
+      "maxValue": 35.67,
+      "minValue": -0.07,
+      "name": "nitrate",
+      "propertyID": "http://vocab.nerc.ac.uk/standard_name/moles_of_nitrate_per_unit_mass_in_sea_water",
+      "unitText": "umol/kg"
+    },
+    {
+      "@type": "PropertyValue",
+      "maxValue": 1.3,
+      "minValue": 0.0,
+      "name": "nitrite",
+      "propertyID": "http://vocab.nerc.ac.uk/standard_name/moles_of_nitrite_per_unit_mass_in_sea_water",
+      "unitText": "umol/kg"
+    },
+    {
+      "@type": "PropertyValue",
+      "maxValue": 2.68,
+      "minValue": 0.01,
+      "name": "phosphate",
+      "propertyID": "http://vocab.nerc.ac.uk/standard_name/moles_of_phosphate_per_unit_mass_in_sea_water",
+      "unitText": "umol/kg"
+    },
+    {
+      "@type": "PropertyValue",
+      "maxValue": 6.096,
+      "minValue": -0.001,
+      "name": "cfc_11",
+      "propertyID": "http://vocab.nerc.ac.uk/standard_name/moles_of_cfc11_per_unit_mass_in_sea_water",
+      "unitText": "pmol/kg"
+    },
+    {
+      "@type": "PropertyValue",
+      "maxValue": 2281.6,
+      "minValue": 8.0,
+      "name": "total_carbon",
+      "propertyID": "http://vocab.nerc.ac.uk/standard_name/moles_of_dissolved_inorganic_carbon_per_unit_mass_in_sea_water",
+      "unitText": "umol/kg"
+    },
+    {
+      "@type": "PropertyValue",
+      "maxValue": 8.0362,
+      "minValue": 7.5073,
+      "name": "ph_total_h_scale",
+      "propertyID": "http://vocab.nerc.ac.uk/standard_name/sea_water_ph_reported_on_total_scale",
+      "unitText": "1"
+    },
+    {
+      "@type": "PropertyValue",
+      "maxValue": 25.19,
+      "minValue": 9.0,
+      "name": "ph_temperature",
+      "propertyID": "http://vocab.nerc.ac.uk/standard_name/temperature_of_analysis_of_sea_water",
+      "unitText": "degC"
+    },
+    {
+      "@type": "PropertyValue",
+      "maxValue": 23.9496,
+      "minValue": -1.8162,
+      "name": "ref_temperature_c",
+      "propertyID": "http://vocab.nerc.ac.uk/standard_name/sea_water_temperature",
+      "unitText": "degC"
+    },
+    {
+      "@type": "PropertyValue",
+      "maxValue": 0.1769,
+      "minValue": -0.0033,
+      "name": "cdom",
+      "propertyID": "http://vocab.nerc.ac.uk/standard_name/volume_beam_attenuation_coefficient_of_radiative_flux_in_sea_water",
+      "unitText": "m^-1"
+    },
+    {
+      "@type": "PropertyValue",
+      "maxValue": 1.963587225,
+      "minValue": -0.351670452,
+      "name": "chlorophyll_a",
+      "propertyID": "http://vocab.nerc.ac.uk/standard_name/mass_concentration_of_chlorophyll_a_in_sea_water",
+      "unitText": "ug/l"
+    },
+    {
+      "@type": "PropertyValue",
+      "maxValue": 1457735100,
+      "minValue": 1455861420,
+      "name": "bottle_time",
+      "propertyID": "http://vocab.nerc.ac.uk/standard_name/time"
+    },
+    {
+      "@type": "PropertyValue",
+      "maxValue": -28.318,
+      "minValue": -66.6027,
+      "name": "bottle_latitude",
+      "propertyID": "http://vocab.nerc.ac.uk/standard_name/latitude",
+      "unitText": "degree_north"
+    },
+    {
+      "@type": "PropertyValue",
+      "maxValue": 95.013,
+      "minValue": 78.0101,
+      "name": "bottle_longitude",
+      "propertyID": "http://vocab.nerc.ac.uk/standard_name/longitude",
+      "unitText": "degree_east"
+    },
+    {
+      "@type": "PropertyValue",
+      "maxValue": 555,
+      "minValue": 325,
+      "name": "CDOM_WAVELENGTHS",
+      "propertyID": "http://vocab.nerc.ac.uk/standard_name/radiation_wavelength",
+      "unitText": "nm"
+    },
+    {
+      "@type": "PropertyValue",
+      "maxValue": 4808.583560261797,
+      "minValue": 0.9913331447791217,
+      "name": "package_depth",
+      "propertyID": "http://vocab.nerc.ac.uk/standard_name/depth",
+      "unitText": "meters"
+    }
+  ]
+}

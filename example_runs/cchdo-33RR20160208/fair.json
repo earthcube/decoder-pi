@@ -1,0 +1,208 @@
+{
+  "dataset_name": "bottle",
+  "dataset_path": "runs/cchdo-33RR20160208",
+  "domain": "climate",
+  "assessment_date": "2026-09-24T22:43:52.563534",
+  "assessor_version": "1.0.0",
+  "overall_score": 0.888888888888889,
+  "category_scores": {
+    "findable": 0.9166666666666666,
+    "accessible": 1.0,
+    "interoperable": 0.7777777777777778,
+    "reusable": 0.8333333333333334
+  },
+  "principles": {
+    "F1": {
+      "principle_id": "F1",
+      "category": "findable",
+      "name": "Globally Unique Identifier",
+      "description": "(Meta)data are assigned a globally unique and persistent identifier",
+      "score": "FULLY_COMPLIANT",
+      "score_value": 3,
+      "evidence": [
+        "DOI found: 10.7942/C2H59N"
+      ],
+      "recommendations": []
+    },
+    "F2": {
+      "principle_id": "F2",
+      "category": "findable",
+      "name": "Rich Metadata",
+      "description": "Data are described with rich metadata",
+      "score": "PARTIALLY_COMPLIANT",
+      "score_value": 2,
+      "evidence": [
+        "Metadata 71% complete"
+      ],
+      "recommendations": [
+        "Complete remaining metadata sections for richer description"
+      ]
+    },
+    "F3": {
+      "principle_id": "F3",
+      "category": "findable",
+      "name": "Identifier in Metadata",
+      "description": "Metadata clearly and explicitly include the identifier of the data they describe",
+      "score": "FULLY_COMPLIANT",
+      "score_value": 3,
+      "evidence": [
+        "Identifier included in metadata"
+      ],
+      "recommendations": []
+    },
+    "F4": {
+      "principle_id": "F4",
+      "category": "findable",
+      "name": "Searchable Registration",
+      "description": "(Meta)data are registered or indexed in a searchable resource",
+      "score": "FULLY_COMPLIANT",
+      "score_value": 3,
+      "evidence": [
+        "Registered in CCHDO"
+      ],
+      "recommendations": []
+    },
+    "A1": {
+      "principle_id": "A1",
+      "category": "accessible",
+      "name": "Retrievable by Identifier",
+      "description": "(Meta)data are retrievable by their identifier using a standardized communications protocol",
+      "score": "FULLY_COMPLIANT",
+      "score_value": 3,
+      "evidence": [
+        "Accessible via HTTPS"
+      ],
+      "recommendations": []
+    },
+    "A1.1": {
+      "principle_id": "A1.1",
+      "category": "accessible",
+      "name": "Open Protocol",
+      "description": "The protocol is open, free, and universally implementable",
+      "score": "FULLY_COMPLIANT",
+      "score_value": 3,
+      "evidence": [
+        "Uses open HTTPS protocol"
+      ],
+      "recommendations": []
+    },
+    "A1.2": {
+      "principle_id": "A1.2",
+      "category": "accessible",
+      "name": "Authentication Support",
+      "description": "The protocol allows for an authentication and authorization procedure, where necessary",
+      "score": "FULLY_COMPLIANT",
+      "score_value": 3,
+      "evidence": [
+        "No authentication required (open access)"
+      ],
+      "recommendations": []
+    },
+    "A2": {
+      "principle_id": "A2",
+      "category": "accessible",
+      "name": "Metadata Persistence",
+      "description": "Metadata are accessible, even when the data are no longer available",
+      "score": "FULLY_COMPLIANT",
+      "score_value": 3,
+      "evidence": [
+        "Metadata landing page exists"
+      ],
+      "recommendations": []
+    },
+    "I1": {
+      "principle_id": "I1",
+      "category": "interoperable",
+      "name": "Formal Language",
+      "description": "(Meta)data use a formal, accessible, shared, and broadly applicable language for knowledge representation",
+      "score": "NOT_COMPLIANT",
+      "score_value": 1,
+      "evidence": [
+        "Format has limited interoperability: application/ld+json"
+      ],
+      "recommendations": [
+        "Convert to standard format with well-defined schema"
+      ]
+    },
+    "I2": {
+      "principle_id": "I2",
+      "category": "interoperable",
+      "name": "FAIR Vocabularies",
+      "description": "(Meta)data use vocabularies that follow FAIR principles",
+      "score": "FULLY_COMPLIANT",
+      "score_value": 3,
+      "evidence": [
+        "Uses vocabularies: http://vocab.nerc.ac.uk/standard_name/"
+      ],
+      "recommendations": []
+    },
+    "I3": {
+      "principle_id": "I3",
+      "category": "interoperable",
+      "name": "Qualified References",
+      "description": "(Meta)data include qualified references to other (meta)data",
+      "score": "FULLY_COMPLIANT",
+      "score_value": 3,
+      "evidence": [
+        "References 1 other datasets"
+      ],
+      "recommendations": []
+    },
+    "R1": {
+      "principle_id": "R1",
+      "category": "reusable",
+      "name": "Rich Attributes",
+      "description": "(Meta)data are richly described with a plurality of accurate and relevant attributes",
+      "score": "FULLY_COMPLIANT",
+      "score_value": 3,
+      "evidence": [
+        "Rich dataset attributes documented"
+      ],
+      "recommendations": []
+    },
+    "R1.1": {
+      "principle_id": "R1.1",
+      "category": "reusable",
+      "name": "Clear License",
+      "description": "(Meta)data are released with a clear and accessible data usage license",
+      "score": "NOT_COMPLIANT",
+      "score_value": 1,
+      "evidence": [
+        "No license specified"
+      ],
+      "recommendations": [
+        "Add clear data usage license (CC-BY-4.0, CC0, etc.)"
+      ]
+    },
+    "R1.2": {
+      "principle_id": "R1.2",
+      "category": "reusable",
+      "name": "Detailed Provenance",
+      "description": "(Meta)data are associated with detailed provenance",
+      "score": "FULLY_COMPLIANT",
+      "score_value": 3,
+      "evidence": [
+        "Detailed provenance documented"
+      ],
+      "recommendations": []
+    },
+    "R1.3": {
+      "principle_id": "R1.3",
+      "category": "reusable",
+      "name": "Community Standards",
+      "description": "(Meta)data meet domain-relevant community standards",
+      "score": "FULLY_COMPLIANT",
+      "score_value": 3,
+      "evidence": [
+        "Follows: cf_netcdf, exchange"
+      ],
+      "recommendations": []
+    }
+  },
+  "domain_standards": {},
+  "timing_s": {
+    "fair_assessment_s": 0.0,
+    "domain_standards_s": 0.0003,
+    "total_s": 0.0004
+  }
+}

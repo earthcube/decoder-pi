@@ -1,0 +1,851 @@
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "geolink": "http://schema.geolink.org/1.0/base/main#"
+  },
+  "@id": "https://cchdo.ucsd.edu/cruise/33RR20160208",
+  "@type": "DataCatalog",
+  "dataset": [
+    {
+      "@id": "https://cchdo.ucsd.edu/cruise/33RR20160208#bottle",
+      "@type": "Dataset",
+      "description": "Bottle (discrete sample) data from the hydrographic cruise 33RR20160208",
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "contentSize": "1899562 bytes",
+          "contentUrl": "https://cchdo.ucsd.edu/data/27121/33RR20160208_hy1.csv",
+          "encodingFormat": "text/csv",
+          "name": "exchange"
+        },
+        {
+          "@type": "DataDownload",
+          "contentSize": "888130 bytes",
+          "contentUrl": "https://cchdo.ucsd.edu/data/27122/33RR20160208_nc_hyd.zip",
+          "encodingFormat": "application/zip",
+          "name": "whp_netcdf"
+        },
+        {
+          "@type": "DataDownload",
+          "contentSize": "701952 bytes",
+          "contentUrl": "https://cchdo.ucsd.edu/data/27123/33RR20160208hy.txt",
+          "encodingFormat": "text/plain",
+          "name": "woce"
+        },
+        {
+          "@type": "DataDownload",
+          "contentSize": "842156 bytes",
+          "contentUrl": "https://cchdo.ucsd.edu/data/38395/33RR20160208_bottle.nc",
+          "encodingFormat": "application/x-netcdf",
+          "name": "cf_netcdf"
+        }
+      ],
+      "isAccessibleForFree": true,
+      "name": "US GO-SHIP Hydrographic Cruise 33RR20160208: Bottle Dataset",
+      "provider": {
+        "@id": "https://cchdo.ucsd.edu"
+      },
+      "publisher": {
+        "@id": "https://cchdo.ucsd.edu",
+        "@type": "Organization",
+        "name": "CCHDO",
+        "url": "https://cchdo.ucsd.edu"
+      },
+      "spatialCoverage": {
+        "@type": "Place",
+        "geo": {
+          "@type": "GeoShape",
+          "box": "-66.6027 78.0101 -28.318 95.013",
+          "elevation": -4808
+        }
+      },
+      "temporalCoverage": "2016-02-19/2016-03-11",
+      "variableMeasured": [
+        {
+          "@type": "PropertyValue",
+          "maxValue": 1457729700,
+          "minValue": 1455861420,
+          "name": "time",
+          "propertyID": "http://vocab.nerc.ac.uk/standard_name/time"
+        },
+        {
+          "@type": "PropertyValue",
+          "maxValue": -28.318,
+          "minValue": -66.6027,
+          "name": "latitude",
+          "propertyID": "http://vocab.nerc.ac.uk/standard_name/latitude",
+          "unitText": "degree_north"
+        },
+        {
+          "@type": "PropertyValue",
+          "maxValue": 95.0129,
+          "minValue": 78.0102,
+          "name": "longitude",
+          "propertyID": "http://vocab.nerc.ac.uk/standard_name/longitude",
+          "unitText": "degree_east"
+        },
+        {
+          "@type": "PropertyValue",
+          "maxValue": 4870.0,
+          "minValue": 468.0,
+          "name": "btm_depth",
+          "propertyID": "http://vocab.nerc.ac.uk/standard_name/sea_floor_depth_below_sea_surface",
+          "unitText": "meters"
+        },
+        {
+          "@type": "PropertyValue",
+          "maxValue": 4907.5,
+          "minValue": 1.0,
+          "name": "pressure",
+          "propertyID": "http://vocab.nerc.ac.uk/standard_name/sea_water_pressure",
+          "unitText": "dbar"
+        },
+        {
+          "@type": "PropertyValue",
+          "maxValue": 23.952,
+          "minValue": -1.8167,
+          "name": "ctd_temperature",
+          "propertyID": "http://vocab.nerc.ac.uk/standard_name/sea_water_temperature",
+          "unitText": "degC"
+        },
+        {
+          "@type": "PropertyValue",
+          "maxValue": 36.0204,
+          "minValue": 32.8004,
+          "name": "ctd_salinity",
+          "propertyID": "http://vocab.nerc.ac.uk/standard_name/sea_water_practical_salinity",
+          "unitText": "1"
+        },
+        {
+          "@type": "PropertyValue",
+          "maxValue": 36.018,
+          "minValue": 32.8006,
+          "name": "bottle_salinity",
+          "propertyID": "http://vocab.nerc.ac.uk/standard_name/sea_water_practical_salinity",
+          "unitText": "1"
+        },
+        {
+          "@type": "PropertyValue",
+          "maxValue": 364.1,
+          "minValue": 145.5,
+          "name": "ctd_oxygen",
+          "propertyID": "http://vocab.nerc.ac.uk/standard_name/moles_of_oxygen_per_unit_mass_in_sea_water",
+          "unitText": "umol/kg"
+        },
+        {
+          "@type": "PropertyValue",
+          "maxValue": 362.6,
+          "minValue": 144.7,
+          "name": "oxygen",
+          "propertyID": "http://vocab.nerc.ac.uk/standard_name/moles_of_oxygen_per_unit_mass_in_sea_water",
+          "unitText": "umol/kg"
+        },
+        {
+          "@type": "PropertyValue",
+          "maxValue": 142.4,
+          "minValue": 0.0,
+          "name": "silicate",
+          "propertyID": "http://vocab.nerc.ac.uk/standard_name/moles_of_silicate_per_unit_mass_in_sea_water",
+          "unitText": "umol/kg"
+        },
+        {
+          "@type": "PropertyValue",
+          "maxValue": 35.67,
+          "minValue": -0.07,
+          "name": "nitrate",
+          "propertyID": "http://vocab.nerc.ac.uk/standard_name/moles_of_nitrate_per_unit_mass_in_sea_water",
+          "unitText": "umol/kg"
+        },
+        {
+          "@type": "PropertyValue",
+          "maxValue": 1.3,
+          "minValue": 0.0,
+          "name": "nitrite",
+          "propertyID": "http://vocab.nerc.ac.uk/standard_name/moles_of_nitrite_per_unit_mass_in_sea_water",
+          "unitText": "umol/kg"
+        },
+        {
+          "@type": "PropertyValue",
+          "maxValue": 2.68,
+          "minValue": 0.01,
+          "name": "phosphate",
+          "propertyID": "http://vocab.nerc.ac.uk/standard_name/moles_of_phosphate_per_unit_mass_in_sea_water",
+          "unitText": "umol/kg"
+        },
+        {
+          "@type": "PropertyValue",
+          "maxValue": 6.096,
+          "minValue": -0.001,
+          "name": "cfc_11",
+          "propertyID": "http://vocab.nerc.ac.uk/standard_name/moles_of_cfc11_per_unit_mass_in_sea_water",
+          "unitText": "pmol/kg"
+        },
+        {
+          "@type": "PropertyValue",
+          "maxValue": 2281.6,
+          "minValue": 8.0,
+          "name": "total_carbon",
+          "propertyID": "http://vocab.nerc.ac.uk/standard_name/moles_of_dissolved_inorganic_carbon_per_unit_mass_in_sea_water",
+          "unitText": "umol/kg"
+        },
+        {
+          "@type": "PropertyValue",
+          "maxValue": 8.0362,
+          "minValue": 7.5073,
+          "name": "ph_total_h_scale",
+          "propertyID": "http://vocab.nerc.ac.uk/standard_name/sea_water_ph_reported_on_total_scale",
+          "unitText": "1"
+        },
+        {
+          "@type": "PropertyValue",
+          "maxValue": 25.19,
+          "minValue": 9.0,
+          "name": "ph_temperature",
+          "propertyID": "http://vocab.nerc.ac.uk/standard_name/temperature_of_analysis_of_sea_water",
+          "unitText": "degC"
+        },
+        {
+          "@type": "PropertyValue",
+          "maxValue": 23.9496,
+          "minValue": -1.8162,
+          "name": "ref_temperature_c",
+          "propertyID": "http://vocab.nerc.ac.uk/standard_name/sea_water_temperature",
+          "unitText": "degC"
+        },
+        {
+          "@type": "PropertyValue",
+          "maxValue": 0.1769,
+          "minValue": -0.0033,
+          "name": "cdom",
+          "propertyID": "http://vocab.nerc.ac.uk/standard_name/volume_beam_attenuation_coefficient_of_radiative_flux_in_sea_water",
+          "unitText": "m^-1"
+        },
+        {
+          "@type": "PropertyValue",
+          "maxValue": 1.963587225,
+          "minValue": -0.351670452,
+          "name": "chlorophyll_a",
+          "propertyID": "http://vocab.nerc.ac.uk/standard_name/mass_concentration_of_chlorophyll_a_in_sea_water",
+          "unitText": "ug/l"
+        },
+        {
+          "@type": "PropertyValue",
+          "maxValue": 1457735100,
+          "minValue": 1455861420,
+          "name": "bottle_time",
+          "propertyID": "http://vocab.nerc.ac.uk/standard_name/time"
+        },
+        {
+          "@type": "PropertyValue",
+          "maxValue": -28.318,
+          "minValue": -66.6027,
+          "name": "bottle_latitude",
+          "propertyID": "http://vocab.nerc.ac.uk/standard_name/latitude",
+          "unitText": "degree_north"
+        },
+        {
+          "@type": "PropertyValue",
+          "maxValue": 95.013,
+          "minValue": 78.0101,
+          "name": "bottle_longitude",
+          "propertyID": "http://vocab.nerc.ac.uk/standard_name/longitude",
+          "unitText": "degree_east"
+        },
+        {
+          "@type": "PropertyValue",
+          "maxValue": 555,
+          "minValue": 325,
+          "name": "CDOM_WAVELENGTHS",
+          "propertyID": "http://vocab.nerc.ac.uk/standard_name/radiation_wavelength",
+          "unitText": "nm"
+        },
+        {
+          "@type": "PropertyValue",
+          "maxValue": 4808.583560261797,
+          "minValue": 0.9913331447791217,
+          "name": "package_depth",
+          "propertyID": "http://vocab.nerc.ac.uk/standard_name/depth",
+          "unitText": "meters"
+        }
+      ]
+    },
+    {
+      "@id": "https://cchdo.ucsd.edu/cruise/33RR20160208#ctd",
+      "@type": "Dataset",
+      "description": "CTD (continuous sample) data from the hydrographic cruise 33RR20160208",
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "contentSize": "3514190 bytes",
+          "contentUrl": "https://cchdo.ucsd.edu/data/41943/33RR20160208_ctd.nc",
+          "encodingFormat": "application/x-netcdf",
+          "name": "cf_netcdf"
+        },
+        {
+          "@type": "DataDownload",
+          "contentSize": "1232347 bytes",
+          "contentUrl": "https://cchdo.ucsd.edu/data/41944/33RR20160208_ct.zip",
+          "encodingFormat": "application/zip",
+          "name": "woce"
+        },
+        {
+          "@type": "DataDownload",
+          "contentSize": "2368929 bytes",
+          "contentUrl": "https://cchdo.ucsd.edu/data/41945/33RR20160208_ct1.zip",
+          "encodingFormat": "application/zip",
+          "name": "exchange"
+        },
+        {
+          "@type": "DataDownload",
+          "contentSize": "2650631 bytes",
+          "contentUrl": "https://cchdo.ucsd.edu/data/41946/33RR20160208_nc_ctd.zip",
+          "encodingFormat": "application/zip",
+          "name": "whp_netcdf"
+        }
+      ],
+      "isAccessibleForFree": true,
+      "name": "US GO-SHIP Hydrographic Cruise 33RR20160208: CTD dataset",
+      "provider": {
+        "@id": "https://cchdo.ucsd.edu"
+      },
+      "publisher": {
+        "@id": "https://cchdo.ucsd.edu",
+        "@type": "Organization",
+        "name": "CCHDO",
+        "url": "https://cchdo.ucsd.edu"
+      },
+      "spatialCoverage": {
+        "@id": "https://cchdo.ucsd.edu/cruise/33RR20160208#spatialCoverage",
+        "@type": "Place",
+        "geo": [
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 1",
+            "latitude": -66.6027,
+            "longitude": 78.3815
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 2",
+            "latitude": -66.4997,
+            "longitude": 78.2986
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 3",
+            "latitude": -66.45,
+            "longitude": 78.2494
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 4",
+            "latitude": -66.4,
+            "longitude": 78.1993
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 5",
+            "latitude": -66.2999,
+            "longitude": 78.1253
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 6",
+            "latitude": -66.15,
+            "longitude": 78.0102
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 7",
+            "latitude": -65.6248,
+            "longitude": 78.8085
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 8",
+            "latitude": -65.1,
+            "longitude": 79.6066
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 9",
+            "latitude": -64.5799,
+            "longitude": 80.3926
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 10",
+            "latitude": -64.05,
+            "longitude": 81.2022
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 11",
+            "latitude": -63.535,
+            "longitude": 82.0005
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 12",
+            "latitude": -63.003,
+            "longitude": 82.0103
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 13",
+            "latitude": -62.5003,
+            "longitude": 82.0002
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 14",
+            "latitude": -62.0,
+            "longitude": 82.0002
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 15",
+            "latitude": -61.4999,
+            "longitude": 82.0002
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 16",
+            "latitude": -61.0,
+            "longitude": 82.0005
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 17",
+            "latitude": -60.5001,
+            "longitude": 82.0002
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 18",
+            "latitude": -59.9999,
+            "longitude": 82.001
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 19",
+            "latitude": -59.5002,
+            "longitude": 82.0003
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 20",
+            "latitude": -59.0001,
+            "longitude": 82.0
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 21",
+            "latitude": -58.6101,
+            "longitude": 82.0101
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 22",
+            "latitude": -58.2391,
+            "longitude": 82.0016
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 23",
+            "latitude": -57.916,
+            "longitude": 82.2281
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 24",
+            "latitude": -57.612,
+            "longitude": 82.3811
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 25",
+            "latitude": -57.5131,
+            "longitude": 82.5226
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 26",
+            "latitude": -57.3209,
+            "longitude": 82.7791
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 27",
+            "latitude": -56.897,
+            "longitude": 83.3052
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 28",
+            "latitude": -56.484,
+            "longitude": 83.7702
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 29",
+            "latitude": -56.058,
+            "longitude": 84.2612
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 30",
+            "latitude": -55.6232,
+            "longitude": 84.7474
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 31",
+            "latitude": -55.1951,
+            "longitude": 85.1891
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 32",
+            "latitude": -54.7862,
+            "longitude": 85.6644
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 33",
+            "latitude": -54.367,
+            "longitude": 86.1421
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 34",
+            "latitude": -53.938,
+            "longitude": 86.5697
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 35",
+            "latitude": -53.5264,
+            "longitude": 87.0235
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 36",
+            "latitude": -53.0281,
+            "longitude": 87.4892
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 37",
+            "latitude": -52.531,
+            "longitude": 87.954
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 38",
+            "latitude": -52.0329,
+            "longitude": 88.4196
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 39",
+            "latitude": -51.535,
+            "longitude": 88.8849
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 40",
+            "latitude": -51.037,
+            "longitude": 89.3503
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 41",
+            "latitude": -50.5401,
+            "longitude": 89.83
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 42",
+            "latitude": -50.0409,
+            "longitude": 90.2813
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 43",
+            "latitude": -49.5429,
+            "longitude": 90.7469
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 44",
+            "latitude": -49.0449,
+            "longitude": 91.2121
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 45",
+            "latitude": -48.5469,
+            "longitude": 91.6778
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 46",
+            "latitude": -48.049,
+            "longitude": 92.143
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 47",
+            "latitude": -47.551,
+            "longitude": 92.6087
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 48",
+            "latitude": -47.053,
+            "longitude": 93.0739
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 49",
+            "latitude": -46.5551,
+            "longitude": 93.5393
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 50",
+            "latitude": -46.0569,
+            "longitude": 94.0047
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 51",
+            "latitude": -45.559,
+            "longitude": 94.4702
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 52",
+            "latitude": -44.992,
+            "longitude": 95.0002
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 53",
+            "latitude": -44.351,
+            "longitude": 95.0001
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 54",
+            "latitude": -43.7089,
+            "longitude": 95.0001
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 55",
+            "latitude": -43.068,
+            "longitude": 95.0001
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 56",
+            "latitude": -42.4267,
+            "longitude": 95.0001
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 57",
+            "latitude": -41.7851,
+            "longitude": 95.0002
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 58",
+            "latitude": -41.1441,
+            "longitude": 95.0003
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 59",
+            "latitude": -40.4971,
+            "longitude": 95.0001
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 60",
+            "latitude": -39.997,
+            "longitude": 94.995
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 61",
+            "latitude": -39.507,
+            "longitude": 95.002
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 62",
+            "latitude": -38.9911,
+            "longitude": 94.9921
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 63",
+            "latitude": -38.4901,
+            "longitude": 95.004
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 64",
+            "latitude": -37.9993,
+            "longitude": 95.0039
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 65",
+            "latitude": -37.4941,
+            "longitude": 94.988
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 66",
+            "latitude": -37.0021,
+            "longitude": 95.005
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 67",
+            "latitude": -36.498,
+            "longitude": 95.0028
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 68",
+            "latitude": -36.0181,
+            "longitude": 95.009
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 69",
+            "latitude": -35.4981,
+            "longitude": 94.9909
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 70",
+            "latitude": -35.001,
+            "longitude": 95.0019
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 71",
+            "latitude": -34.5041,
+            "longitude": 95.0051
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 72",
+            "latitude": -33.996,
+            "longitude": 94.9989
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 73",
+            "latitude": -33.5083,
+            "longitude": 95.001
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 74",
+            "latitude": -33.0189,
+            "longitude": 94.9739
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 75",
+            "latitude": -32.5081,
+            "longitude": 95.0029
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 76",
+            "latitude": -32.0089,
+            "longitude": 95.0129
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 77",
+            "latitude": -31.702,
+            "longitude": 94.9999
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 78",
+            "latitude": -31.2999,
+            "longitude": 95.0019
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 79",
+            "latitude": -30.6989,
+            "longitude": 95.0039
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 80",
+            "latitude": -30.1157,
+            "longitude": 94.9998
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 81",
+            "latitude": -29.515,
+            "longitude": 95.0059
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 82",
+            "latitude": -28.911,
+            "longitude": 95.0017
+          },
+          {
+            "@type": "GeoCoordinates",
+            "description": "Profile 83",
+            "latitude": -28.318,
+            "longitude": 95.0091
+          }
+        ]
+      },
+      "temporalCoverage": "2016-02-08/2016-03-16"
+    }
+  ],
+  "description": "Data from the hydrographic cruise 33RR20160208",
+  "keywords": [
+    "ROGER REVELLE",
+    "ctd",
+    "bottle",
+    "Jonathan Nash",
+    "Alison Macdonald",
+    "USHYDRO",
+    "southern",
+    "SOCCOM",
+    "I08S",
+    "GO-SHIP",
+    "indian"
+  ],
+  "name": "US GO-SHIP Hydrographic Cruise 33RR20160208",
+  "subjectOf": [
+    {
+      "@type": "DigitalDocument",
+      "encodingFormat": "text/plain",
+      "url": "https://cchdo.ucsd.edu/data/12413/33RR20160208_do.txt"
+    },
+    {
+      "@type": "DigitalDocument",
+      "encodingFormat": "application/pdf",
+      "url": "https://cchdo.ucsd.edu/data/12419/33RR20160208_do.pdf"
+    }
+  ]
+}

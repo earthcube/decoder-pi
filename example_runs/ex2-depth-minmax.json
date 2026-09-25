@@ -1,0 +1,734 @@
+{
+  "columns": [
+    "subj",
+    "minValue",
+    "maxValue",
+    "propertyId",
+    "unitCode",
+    "unitText",
+    "g"
+  ],
+  "rows": [
+    {
+      "subj": "https://www.bco-dmo.org/dataset/918182",
+      "minValue": "-17.376",
+      "maxValue": "16.386",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/918202",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/918182",
+      "minValue": "-17.376",
+      "maxValue": "16.386",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/918202",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/905149",
+      "minValue": "0.0",
+      "maxValue": "4760.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/908470",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/742124",
+      "minValue": "0.0",
+      "maxValue": "42.75",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/742530",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/742124",
+      "minValue": "0.0",
+      "maxValue": "42.75",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/742530",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/787329",
+      "minValue": "0.0",
+      "maxValue": "600.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/787364",
+      "unitCode": null,
+      "unitText": "meters (m)",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/786098",
+      "minValue": "0.0",
+      "maxValue": "700.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/786119",
+      "unitCode": null,
+      "unitText": "meters (m)",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/783755",
+      "minValue": "0.0",
+      "maxValue": "17.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/785775",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/783755",
+      "minValue": "0.0",
+      "maxValue": "17.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/785775",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/476294",
+      "minValue": "0.0",
+      "maxValue": "1504.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/476309",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/476294",
+      "minValue": "0.0",
+      "maxValue": "1504.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/476309",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/772745",
+      "minValue": "0.0",
+      "maxValue": "1220.0",
+      "propertyId": "http://lod.bco-dmo.org/id/parameter/1690",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/772745",
+      "minValue": "0.0",
+      "maxValue": "1220.0",
+      "propertyId": "http://lod.bco-dmo.org/id/parameter/1690",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/905077",
+      "minValue": "0.0",
+      "maxValue": "4760.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/908455",
+      "unitCode": null,
+      "unitText": "meters (m)",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/905149",
+      "minValue": "0.0",
+      "maxValue": "4760.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/908470",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/3782",
+      "minValue": "0.0",
+      "maxValue": "6001.5",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/948800",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/3782",
+      "minValue": "0.0",
+      "maxValue": "6001.5",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/948800",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/772745",
+      "minValue": "0.0",
+      "maxValue": "29.6",
+      "propertyId": "http://lod.bco-dmo.org/id/parameter/1689",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "meters",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/772745",
+      "minValue": "0.0",
+      "maxValue": "29.6",
+      "propertyId": "http://lod.bco-dmo.org/id/parameter/1689",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "meters",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/3216",
+      "minValue": "0.4",
+      "maxValue": "3003.2",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/19158",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/3216",
+      "minValue": "0.4",
+      "maxValue": "3003.2",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/19158",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/2393",
+      "minValue": "0.5",
+      "maxValue": "200.0",
+      "propertyId": "http://lod.bco-dmo.org/id/parameter/808",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/4049",
+      "minValue": "0.5",
+      "maxValue": "13.5",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/36571",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/781862",
+      "minValue": "0.5",
+      "maxValue": "1.5",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/781882",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/781862",
+      "minValue": "0.5",
+      "maxValue": "1.5",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/781882",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/4049",
+      "minValue": "0.5",
+      "maxValue": "13.5",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/36571",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/2393",
+      "minValue": "0.5",
+      "maxValue": "200.0",
+      "propertyId": "http://lod.bco-dmo.org/id/parameter/808",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/737347",
+      "minValue": "0.61",
+      "maxValue": "15.24",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/737361",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "meters",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/737347",
+      "minValue": "0.61",
+      "maxValue": "15.24",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/737361",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "meters",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/749941",
+      "minValue": "1.0",
+      "maxValue": "150.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/749947",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/742780",
+      "minValue": "1.0",
+      "maxValue": "4350.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/742805",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "meters",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/742780",
+      "minValue": "1.0",
+      "maxValue": "4350.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/742805",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "meters",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/749941",
+      "minValue": "1.0",
+      "maxValue": "150.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/749947",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/809612",
+      "minValue": "2.0",
+      "maxValue": "4200.1",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/809638",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/809612",
+      "minValue": "2.0",
+      "maxValue": "4200.1",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/809638",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/950296",
+      "minValue": "2.0",
+      "maxValue": "960.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/952923",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/950296",
+      "minValue": "2.0",
+      "maxValue": "960.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/952923",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/738001",
+      "minValue": "3.0",
+      "maxValue": "3234.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/738015",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/738001",
+      "minValue": "3.0",
+      "maxValue": "3234.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/738015",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/707023",
+      "minValue": "3.75",
+      "maxValue": "6.36",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/707042",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "meters",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/707023",
+      "minValue": "3.75",
+      "maxValue": "6.36",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/707042",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "meters",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/813379",
+      "minValue": "4.513",
+      "maxValue": "5247.235",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/813460",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/813379",
+      "minValue": "4.513",
+      "maxValue": "5247.235",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/813460",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/658213",
+      "minValue": "4.6",
+      "maxValue": "12.2",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/658271",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "meters",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/658213",
+      "minValue": "4.6",
+      "maxValue": "12.2",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/658271",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "meters",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/692279",
+      "minValue": "5.0",
+      "maxValue": "45.9",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/692419",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/692279",
+      "minValue": "5.0",
+      "maxValue": "45.9",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/692419",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/753594",
+      "minValue": "5.0",
+      "maxValue": "3004.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/753603",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/753594",
+      "minValue": "5.0",
+      "maxValue": "3004.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/753603",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/986596",
+      "minValue": "5.0",
+      "maxValue": "4750.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/988356",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/986596",
+      "minValue": "5.0",
+      "maxValue": "4750.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/988356",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/742819",
+      "minValue": "5.0",
+      "maxValue": "3500.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/742858",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/742819",
+      "minValue": "5.0",
+      "maxValue": "3500.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/742858",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/893293",
+      "minValue": "5.4",
+      "maxValue": "126.7",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/893348",
+      "unitCode": null,
+      "unitText": "meters (m)",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/991532",
+      "minValue": "5.86",
+      "maxValue": "5620.55",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/992555",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/991532",
+      "minValue": "5.86",
+      "maxValue": "5620.55",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/992555",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/813133",
+      "minValue": "9.46",
+      "maxValue": "5231.51",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/813275",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/813133",
+      "minValue": "9.46",
+      "maxValue": "5231.51",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/813275",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/918265",
+      "minValue": "10.0",
+      "maxValue": "10.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/918490",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/918265",
+      "minValue": "10.0",
+      "maxValue": "10.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/918490",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/810902",
+      "minValue": "10.7",
+      "maxValue": "747.7",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/810934",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/810902",
+      "minValue": "10.7",
+      "maxValue": "747.7",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/810934",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/813317",
+      "minValue": "20.0",
+      "maxValue": "5000.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/813350",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/813317",
+      "minValue": "20.0",
+      "maxValue": "5000.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/813350",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/946249",
+      "minValue": "20.7",
+      "maxValue": "5440.4",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/946314",
+      "unitCode": null,
+      "unitText": "decibars (db)",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/987617",
+      "minValue": "21.0",
+      "maxValue": "4476.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/990083",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/987617",
+      "minValue": "21.0",
+      "maxValue": "4476.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/990083",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/946242",
+      "minValue": "21.6",
+      "maxValue": "5693.3",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/946274",
+      "unitCode": null,
+      "unitText": "decibars (db)",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/3236",
+      "minValue": "44.105233",
+      "maxValue": "814.07077",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/19738",
+      "unitCode": null,
+      "unitText": "decibars",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/3236",
+      "minValue": "47.0",
+      "maxValue": "804.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/19729",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/3236",
+      "minValue": "47.0",
+      "maxValue": "804.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/19729",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://www.bco-dmo.org/dataset/471977",
+      "minValue": "400.0",
+      "maxValue": "1400.0",
+      "propertyId": "http://lod.bco-dmo.org/id/dataset-parameter/472000",
+      "unitCode": null,
+      "unitText": "meters (m)",
+      "g": "urn:doos:bcodmo"
+    },
+    {
+      "subj": "https://obis.org/dataset/7de27276-f9f7-40a2-bbd3-18512b50fe28",
+      "minValue": "-0.20000000298023224",
+      "maxValue": "216.0245361328125",
+      "propertyId": "https://obis.org/data/access/",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:obis"
+    },
+    {
+      "subj": "https://obis.org/dataset/7de27276-f9f7-40a2-bbd3-18512b50fe28",
+      "minValue": "-0.20000000298023224",
+      "maxValue": "216.0245361328125",
+      "propertyId": "https://obis.org/data/access/",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:obis"
+    },
+    {
+      "subj": "https://obis.org/dataset/7de27276-f9f7-40a2-bbd3-18512b50fe28",
+      "minValue": "-0.20000000298023224",
+      "maxValue": "216.0245361328125",
+      "propertyId": "https://obis.org/data/access/",
+      "unitCode": "http://dbpedia.org/resource/Metre",
+      "unitText": "m",
+      "g": "urn:doos:obis"
+    },
+    {
+      "subj": "https://obis.org/dataset/d979d58a-746a-4e40-a9ca-94c025b5bfe8",
+      "minValue": "-0.30000001192092896",
+      "maxValue": "5000.0",
+      "propertyId": "https://obis.org/data/access/",
+      "unitCode": "http://dbpedia.org/resource/Metre",
+      "unitText": "m",
+      "g": "urn:doos:obis"
+    },
+    {
+      "subj": "https://obis.org/dataset/d979d58a-746a-4e40-a9ca-94c025b5bfe8",
+      "minValue": "-0.30000001192092896",
+      "maxValue": "5000.0",
+      "propertyId": "https://obis.org/data/access/",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:obis"
+    },
+    {
+      "subj": "https://obis.org/dataset/d979d58a-746a-4e40-a9ca-94c025b5bfe8",
+      "minValue": "-0.30000001192092896",
+      "maxValue": "5000.0",
+      "propertyId": "https://obis.org/data/access/",
+      "unitCode": "https://vocab.nerc.ac.uk/collection/P06/current/ULAA/",
+      "unitText": "m",
+      "g": "urn:doos:obis"
+    },
+    {
+      "subj": "https://obis.org/dataset/28b3b579-c7d1-43ad-8cf6-3e5d6b3b2016",
+      "minValue": "-0.4000000059604645",
+      "maxValue": "25.600000381469727",
+      "propertyId": "https://obis.org/data/access/",
+      "unitCode": "http://dbpedia.org/resource/Metre",
+      "unitText": "m",
+      "g": "urn:doos:obis"
+    },
+    {
+      "subj": "https://obis.org/dataset/28b3b579-c7d1-43ad-8cf6-3e5d6b3b2016",
+      "minValue": "-0.4000000059604645",
+      "maxValue": "25.600000381469727",
+      "propertyId": "https://obis.org/data/access/",
+      "unitCode": "https://qudt.org/vocab/unit/M",
+      "unitText": "m",
+      "g": "urn:doos:obis"
+    }
+  ],
+  "count": 80
+}

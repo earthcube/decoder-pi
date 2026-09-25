@@ -1,0 +1,26 @@
+[
+  {
+    "raw": "10.7942/C2H59N",
+    "scheme": "doi",
+    "normalized": "10.7942/C2H59N",
+    "url": "https://doi.org/10.7942/C2H59N",
+    "valid_syntax": true,
+    "resolved": true,
+    "status_code": 200,
+    "resolved_url": "https://cchdo.ucsd.edu/cruise/33RR20160208",
+    "error": null,
+    "notes": []
+  },
+  {
+    "raw": "10.7284/906584",
+    "scheme": "doi",
+    "normalized": "10.7284/906584",
+    "url": "https://doi.org/10.7284/906584",
+    "valid_syntax": true,
+    "resolved": true,
+    "status_code": 200,
+    "resolved_url": "https://www.rvdata.us/search/cruise/RR1602",
+    "error": null,
+    "notes": []
+  }
+]

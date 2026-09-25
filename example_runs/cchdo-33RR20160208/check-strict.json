@@ -1,0 +1,77 @@
+{
+  "dataset_name": "metadata",
+  "policy_name": "strict",
+  "status": "non_compliant",
+  "compliance_score": 0.8,
+  "total_checks": 5,
+  "passed_checks": 4,
+  "failed_checks": 1,
+  "violations": [
+    "license_required: No license specified"
+  ],
+  "warnings": [],
+  "checks": [
+    {
+      "name": "license_required",
+      "description": "Policy rule: license_required",
+      "passed": false,
+      "status": "failed",
+      "message": "No license specified",
+      "severity": "error",
+      "details": {
+        "category": "compliance"
+      }
+    },
+    {
+      "name": "provenance_required",
+      "description": "Policy rule: provenance_required",
+      "passed": true,
+      "status": "passed",
+      "message": "Provenance information found",
+      "severity": "error",
+      "details": {
+        "category": "compliance"
+      }
+    },
+    {
+      "name": "fair_compliance",
+      "description": "Policy rule: fair_compliance",
+      "passed": true,
+      "status": "passed",
+      "message": "FAIR score 0.89 >= 0.7",
+      "severity": "error",
+      "details": {
+        "category": "compliance"
+      }
+    },
+    {
+      "name": "missing_data_limit",
+      "description": "Policy rule: missing_data_limit",
+      "passed": true,
+      "status": "passed",
+      "message": "Missing ratio 0.00% <= 5.00%",
+      "severity": "warning",
+      "details": {
+        "category": "quality"
+      }
+    },
+    {
+      "name": "required_fields",
+      "description": "Policy rule: required_fields",
+      "passed": true,
+      "status": "passed",
+      "message": "All required fields present",
+      "severity": "error",
+      "details": {
+        "category": "completeness"
+      }
+    }
+  ],
+  "timestamp": "2026-09-24T22:44:19.546280",
+  "metadata": {
+    "metadata_path": "runs/cchdo-33RR20160208/metadata.json",
+    "policy_version": "1.0.0",
+    "domain": "climate",
+    "num_rows": 0
+  }
+}
