@@ -15,14 +15,16 @@ one with `/skill:sparql`, `/skill:catalog-plot`, `/skill:catalog-map`,
 
 ## One graph per chain
 
-These catalogs do **not** overlap. Never put two endpoints in the same prompt
-or join their results.
+These catalogs do **not** overlap. Never put two catalog SPARQL URLs in the
+same prompt or join their results. Example 15 is still one catalog: the
+`decoder` MCP searches facetsearch, and the SPARQL step uses that same graph.
 
 | Catalog | SPARQL URL | What it is |
 |---|---|---|
 | deepoceans | `https://qlever.geocodes-aws.earthcube.org/graphspace/deepoceans` | Ocean observation **metadata** (schema.org, DepBelowSurf, cruise tracks) |
 | ecoforecast | `https://qlever.geocodes-aws.earthcube.org/graphspace/ecoforecast` | EFI/NEON **forecast catalog** (STAC, site points, parquet downloads) |
 | earthsurface | `https://qlever.geocodes-aws.earthcube.org/graphspace/earthsurface` | Land hydrography / climate / geochemistry **metadata** (20° tiles, GeoTIFF URLs) |
+| facetsearch | `https://qlever.geocodes-aws-dev.earthcube.org/graphspace/facetsearch` | GeoCodes faceted catalog behind the `decoder` MCP |
 
 SPARQL returns catalog fields (counts, min/max, lat/lon, download URLs). Numeric
 CRPS / forecast series come from parquet on **ecoforecast only**, not from RDF
@@ -59,6 +61,19 @@ sparql  →  table/JSON
             ├─ hydrography-tiles   (grid, lookup, layers)
             └─ geotiff-list        (URL table, no raster download)
 ```
+
+**Facetsearch chain** (example 15)
+
+```text
+decoder MCP search_datasets  →  hit graph IRIs
+                                  └─ sparql (those graphs only) → JSON + CSV
+                                        └─ catalog-map points --from-json
+```
+
+The MCP returns a point count and one bounding box per hit. The latitudes and
+longitudes are `schema:latitude` / `schema:longitude` inside each hit's named
+graph. `catalog-map points --endpoint` ignores the search and must not be used
+here.
 
 ## What is actually scientific in these graphs
 
@@ -436,6 +451,65 @@ Report the PNG paths. Do not use deepoceans or ecoforecast fixtures.
 
 ---
 
+# Facetsearch examples
+
+## 15. Search hits to a point map (decoder MCP → sparql → catalog-map)
+
+The `decoder` MCP searches
+`https://qlever.geocodes-aws-dev.earthcube.org/graphspace/facetsearch`.
+`search_datasets` does not return the coordinates. Each hit's `graph` is the
+named graph that holds them. A box over central Pennsylvania is a bounded
+slice (on the order of 60 datasets, all with points in a recent check).
+
+**Prompt**
+
+```text
+Use the decoder MCP server and this SPARQL endpoint only:
+https://qlever.geocodes-aws-dev.earthcube.org/graphspace/facetsearch
+
+Do not query deepoceans, ecoforecast, or earthsurface.
+Do not run catalog-map points --endpoint. That plots whatever lat/lon the
+endpoint returns, not the search hits.
+
+1. count_datasets with boundingBox north 42, south 39, east -74, west -80.
+2. search_datasets with that same boundingBox, includeSpatialCoverage true,
+   and limit 200. If a page comes back full, continue with offset until a
+   short page. Keep each hit's graph where spatialCoverage.pointCount is
+   greater than 0. Skip hits with null coverage and say how many you skipped.
+3. One ad-hoc SPARQL query (sparql query, --show-query). Put LIMIT in the
+   query. The query subcommand does not take --limit. Restrict to the graphs
+   from step 2:
+
+   PREFIX schema: <https://schema.org/>
+   SELECT ?g ?s ?lat ?lon WHERE {
+     VALUES ?g { <graph-iri-1> <graph-iri-2> }
+     GRAPH ?g {
+       ?s schema:latitude ?lat ;
+          schema:longitude ?lon .
+     }
+   }
+   LIMIT 8000
+
+   The coordinates are on nodes inside the hit's named graph, not on the
+   dataset subject. Save --format json to runs/ex15-search-points.json.
+4. Write runs/ex15-search-points.csv from those same rows, header
+   g,s,lat,lon. Do not issue a second SPARQL query for the CSV.
+5. catalog-map points --from-json runs/ex15-search-points.json
+   → runs/ex15-search-points.png
+   Keep coastlines.
+
+Report the dataset count, the CSV row count, and how many points were
+plotted versus skipped. These are the search hits' sample points. Do not
+copy the MCP boxes strings onto the map.
+```
+
+**Skills:** `decoder` MCP (`count_datasets`, `search_datasets`) → `sparql` → `catalog-map` (`points --from-json`)  
+**Expect:** `runs/ex15-search-points.csv` with one row per lat/lon, and
+`runs/ex15-search-points.png`, a coastline map of those points in the
+Pennsylvania box. Empty SPARQL means no PNG.
+
+---
+
 # Scientifically motivated prompts (current skills)
 
 These stay on **one** graph. They use existing CLIs. They ask catalog or parquet questions a domain scientist might actually care about.
@@ -555,5 +629,5 @@ Do not invent numeric climatologies. Do not download CHELSA rasters.
 - Portable SPARQL only: no `geof:distance`, no QLever `spatialSearch:`.
 - One parquet object per plot; 80 MiB download cap.
 - If a step returns 0 rows, say so and skip the PNG rather than fabricating data.
-- **Never mix deepoceans, ecoforecast, and earthsurface in one chain.** They are unrelated catalogs.
+- **Never mix deepoceans, ecoforecast, earthsurface, and facetsearch in one chain.** They are unrelated catalogs. Example 15 stays on facetsearch: the `decoder` MCP search and that graph's SPARQL URL.
 - Scoring one ecoforecast scores file, or one deepoceans CSV distribution, for AI readiness is a separate prompt: [`AIDRIN_EXAMPLE.md`](AIDRIN_EXAMPLE.md).
