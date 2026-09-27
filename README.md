@@ -1,17 +1,55 @@
 # decoder-pi
 
-A lightweight [Pi](https://pi.dev) harness: skills and extensions live in this
-directory and are loaded at launch. They are **not** installed into global Pi
-settings (`~/.pi/agent/settings.json`) or a project `.pi/` config.
+A lightweight [Pi](https://pi.dev) harness: skills and extensions live in this directory and are loaded at launch. They are **not** installed into global Pi settings (`~/.pi/agent/settings.json`) or a project `.pi/` config.
 
-Pi 0.85.1+ is required (`pi` on `PATH`). Your existing provider auth, models,
-and global packages stay in global Pi settings. This repo only adds local skills.
+Pi 0.85.1+ is required (`pi` on `PATH`). Your existing provider auth, models, and global packages stay in global Pi settings. This repo only adds local skills.
+
+## High level view
+
+A visual overview of what is here follows.  The harness is based on Pi and 
+loads services from DeCODER, AIDRIN, SetGo and Open Knowledge Network (OKN).  Once loaded the quickest way to see what is possible is to try the [examples](./EXAMPLES.md).  
+
+```mermaid
+
+flowchart LR
+    subgraph Sources
+        direction TB
+        DG["DeCODER Graph"]
+    end
+
+    subgraph MCP
+        direction TB
+        DeCODER
+        OKN
+        AIDRIN["AIDRIN\n(stdio)"]
+    end
+
+    subgraph Skills
+        direction TB
+        decoder["DeCODER"]
+        SetGo
+    end
+
+    LLM[LLM]
+    Harness[Harness]
+
+    MCP <--> Harness
+    Skills <--> Harness
+    Sources <--> Harness
+    Harness <--> LLM
+
+```
+
 
 ## Launch
 
 `./bin/pi` always `cd`s to the repo root before starting Pi so project-root
 `.mcp.json` (AIDRIN) is discovered even if you invoke the launcher from another
 directory.
+
+### Desktop window
+
+`desktop/` is a Tauri window on the same launcher. It starts `./bin/pi --mode rpc` and renders the chat, tool output, and files under `runs/`. Skills, MCP, and model auth stay in Pi. See [`desktop/README.md`](desktop/README.md).
 
 ### AIDRIN MCP (optional)
 
