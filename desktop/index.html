@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decoder</title>
+    <script type="module" src="/src/main.ts" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <div class="title-block">
+          <h1>Decoder</h1>
+          <p id="subtitle">Starting the Pi harness…</p>
+        </div>
+        <div id="meta">
+          <span id="model">model unavailable</span>
+          <span id="thinking"></span>
+        </div>
+      </header>
+      <div id="status" role="status"></div>
+      <div id="workspace">
+        <section id="chat" aria-label="Conversation"></section>
+        <div
+          id="splitter"
+          role="separator"
+          aria-orientation="vertical"
+          aria-label="Resize files pane"
+          tabindex="0"
+        ></div>
+        <aside id="artifacts" aria-label="Files written by the harness">
+          <div class="aside-head">
+            <h2>Files</h2>
+            <button id="refresh" type="button">Refresh</button>
+          </div>
+          <ul id="artifact-list"></ul>
+          <div id="preview" hidden></div>
+        </aside>
+      </div>
+      <form id="composer">
+        <label class="sr" for="prompt">Message</label>
+        <textarea
+          id="prompt"
+          rows="3"
+          placeholder="Ask about a catalog. Skills and tools stay in Pi."
+        ></textarea>
+        <div class="composer-actions">
+          <p id="hint">Enter sends. Shift+Enter adds a line.</p>
+          <button id="stop" type="button" disabled>Stop</button>
+          <button id="send" type="submit">Send</button>
+        </div>
+      </form>
+      <details id="log">
+        <summary>Harness log</summary>
+        <pre id="stderr"></pre>
+      </details>
+    </div>
+    <div id="dialog" hidden>
+      <form id="dialog-form" class="dialog-card">
+        <h2 id="dialog-title"></h2>
+        <p id="dialog-message"></p>
+        <div id="dialog-body"></div>
+        <div class="dialog-actions">
+          <button id="dialog-cancel" type="button">Cancel</button>
+          <button id="dialog-ok" type="submit">OK</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

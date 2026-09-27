@@ -1,0 +1,305 @@
+:root {
+  color-scheme: dark;
+  --bg: #101614;
+  --bg-raise: #18211d;
+  --bg-sink: #0b100e;
+  --line: #31423a;
+  --text: #e7efe9;
+  --muted: #8ea399;
+  --brass: #e2b15a;
+  --brass-ink: #2a2112;
+  --sea: #7eb8a2;
+  --danger: #e08b73;
+  --ok: #8fce9a;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+* { box-sizing: border-box; }
+
+html, body, #app {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(1200px 500px at 10% -10%, rgba(226, 177, 90, 0.08), transparent 50%),
+    var(--bg);
+}
+
+#app {
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr) auto auto;
+  min-height: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: end;
+  padding: 16px 20px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+h1, h2, p { margin: 0; }
+
+h1 {
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+h2 { font-size: 0.95rem; font-weight: 600; }
+
+#subtitle, #hint, #meta, #status, .artifact-meta, .tool-name {
+  font-family: "IBM Plex Mono", "Source Code Pro", ui-monospace, monospace;
+  font-size: 0.75rem;
+}
+
+#subtitle, #hint, #meta { color: var(--muted); }
+
+#meta { display: flex; gap: 12px; text-align: right; }
+
+#status {
+  min-height: 1.6rem;
+  padding: 6px 20px;
+  color: var(--sea);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#status.warn { color: var(--brass); }
+#status.error { color: var(--danger); }
+
+#workspace {
+  --files-width: 320px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 8px var(--files-width);
+  min-height: 0;
+}
+
+#splitter {
+  cursor: col-resize;
+  touch-action: none;
+  position: relative;
+}
+
+#splitter::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 3px;
+  width: 1px;
+  background: var(--line);
+}
+
+#splitter:hover::before,
+#splitter.dragging::before,
+#splitter:focus-visible::before {
+  left: 2px;
+  width: 3px;
+  background: var(--brass);
+}
+
+body.resizing,
+body.resizing * {
+  cursor: col-resize !important;
+  user-select: none;
+}
+
+#chat, #artifacts {
+  min-height: 0;
+  overflow: auto;
+}
+
+#chat {
+  padding: 16px 20px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#artifacts {
+  background: rgba(11, 16, 14, 0.45);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.aside-head, .composer-actions, .dialog-actions, .preview-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+#artifact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  flex: 1;
+}
+
+#artifact-list button, #preview, .bubble, .tool, .dialog-card, #composer, #log {
+  border: 1px solid var(--line);
+  background: var(--bg-raise);
+}
+
+#artifact-list button {
+  width: 100%;
+  text-align: left;
+  color: inherit;
+  padding: 8px;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+#artifact-list button[aria-current="true"] {
+  border-color: var(--brass);
+}
+
+.artifact-meta { color: var(--muted); margin-top: 2px; }
+
+#preview {
+  min-height: 0;
+  overflow: auto;
+  padding: 8px;
+  flex: 1;
+}
+
+#preview img, #preview iframe {
+  width: 100%;
+  border: 0;
+  background: white;
+}
+
+#preview iframe { height: 280px; }
+
+#preview pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: ui-monospace, monospace;
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+.bubble, .tool { padding: 10px 12px; }
+
+.bubble.user {
+  align-self: end;
+  max-width: 42rem;
+  background: #243129;
+}
+
+.bubble.assistant { max-width: 48rem; }
+
+.bubble .who, .tool-name {
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.bubble .body, .tool pre, #stderr {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.tool { border-style: dashed; }
+.tool.error { border-color: var(--danger); }
+.tool pre { margin: 0; max-height: 16rem; overflow: auto; }
+
+details.thinking { margin-bottom: 8px; color: var(--muted); }
+details.thinking summary { cursor: pointer; }
+
+#composer {
+  margin: 8px 20px 12px;
+  padding: 8px;
+}
+
+textarea, input, button {
+  font: inherit;
+}
+
+textarea, input[type="text"] {
+  width: 100%;
+  color: var(--text);
+  background: var(--bg-sink);
+  border: 1px solid var(--line);
+  padding: 8px;
+  resize: vertical;
+}
+
+button {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line);
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+button:disabled { opacity: 0.45; cursor: default; }
+
+#send, #dialog-ok {
+  background: var(--brass);
+  color: var(--brass-ink);
+  border-color: transparent;
+}
+
+#log { margin: 0 20px 12px; padding: 6px 10px; }
+#stderr {
+  max-height: 8rem;
+  overflow: auto;
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+#dialog {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 10, 9, 0.72);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+#dialog[hidden] { display: none; }
+
+.dialog-card {
+  width: min(32rem, 100%);
+  padding: 16px;
+  display: grid;
+  gap: 10px;
+}
+
+.choice {
+  display: block;
+  width: 100%;
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+@media (max-width: 900px) {
+  #workspace { grid-template-columns: 1fr; }
+  #splitter { display: none; }
+  #artifacts {
+    border-top: 1px solid var(--line);
+    max-height: 40vh;
+  }
+}
