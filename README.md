@@ -118,7 +118,7 @@ initial prompt) pass through `./bin/pi`.
 
 Inside a session: `/skill:sparql`, `/skill:catalog-plot`, `/skill:catalog-map`,
 `/skill:forecast-inventory`, `/skill:forecast-parquet`, `/skill:surface-inventory`,
-`/skill:hydrography-tiles`, `/skill:geotiff-list`.
+`/skill:hydrography-tiles`, `/skill:geotiff-list`, `/skill:handoff`.
 
 ## Layout
 
@@ -134,7 +134,8 @@ decoder-pi/
 │   ├── forecast-parquet/          # parquet CRPS / mean, or one lead
 │   ├── surface-inventory/         # earthsurface catalog
 │   ├── hydrography-tiles/         # 20° hydrography tile index
-│   └── geotiff-list/              # raster URL table (no download)
+│   ├── geotiff-list/              # raster URL table (no download)
+│   └── handoff/                   # human-gated session handoff record
 ├── pyproject.toml                 # SPARQLWrapper + matplotlib + pyarrow
 └── AGENTS.md
 ```

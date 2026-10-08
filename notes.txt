@@ -1,5 +1,43 @@
 
+1) add in datapresser https://datapressr.datahub.io/
+2) Look over:  tabpfn-3.5 from priorlabs.ai  POINTLESS
+3) maybe a geopandas based skill to work with tabular to spatial format requests.
+4) need some prov tracking
+5) AI policy document about how we accept the responsibility
+6) maybe DOOS needs it's own harness for this?   (and ODSET)
 
-https://qlever-test.geocodes-aws-dev.earthcube.org/ec/api/mcp
+is it all really about the data?
+
+4) is important, also a notebook.md like file would be nice
 
 
+A not on 3 and 4.   This shows a need for good metadata around the skills in terms of the input and output formats used/produced.  We could look at the workflow hub and see how it is defined there.   However, it would be nice to follow schema.org (SOSO, CDIF, etc) to expresee that more semtntically.
+
+This also speaks to the issue of 3 then to actually document this flow of objects through to the final product.
+
+
+
+Nice example:
+
+---
+name: database-migration
+description: Manages PostgreSQL schema migrations, Drizzle ORM updates, and rollback validation. Trigger whenever files in src/db/ or schema.ts are touched.
+---
+
+# Database Migration Skill
+
+## Blocking Pre-Conditions
+Before modifying any schema file in src/db/:
+1. Run "npm run db:check" to verify the current migration state.
+2. Confirm that no pending unapplied migrations exist in src/db/migrations/.
+
+## Execution Rules
+- Always use Drizzle Kit generate commands rather than hand-writing raw SQL migrations.
+- If altering a non-null column, provide an explicit default value to prevent table locks.
+- Never run dropTable without an explicit dry-run confirmation from the user.
+
+## Verification Gate (Mandatory)
+Run the following verification sequence in order:
+1. Run "npm run db:generate" to generate migration files.
+2. Run "npm run test:db" to execute the migration test suite against local Postgres.
+3. If exit code != 0, inspect the migration log, revert the change, and apply the Smallest Durable Fix.

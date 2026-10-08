@@ -15,6 +15,7 @@ Skills:
 - `skills/hydrography-tiles` — 20° hydrography.org tile grid / lookup / layers.
 - `skills/geotiff-list` — list GeoTIFF URLs; does not download rasters.
 - `skills/setgo` — metadata assessment via the `setgo` command on `PATH`. ORCID name search is not that command: from this repo root run `uv run --no-project --with-editable /home/fils/src/git/setgo python skills/setgo/scripts/lookup_orcid.py`.
+- `skills/handoff` — local human-gated handoff record. The next session reads the committed file via the handoff tools.
 
 The graphs are catalog metadata. Do not treat `prediction` / `crps` as numeric
 SPARQL values; plot those from parquet. Distance is client-side haversine, not
