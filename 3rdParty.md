@@ -2,8 +2,8 @@
 
 This harness does not reimplement these projects. `./bin/pi` starts Pi in the
 repo root, so `.mcp.json` is discovered as project MCP config, and
-`extensions/load-skills.ts` contributes `skills/`. AIDRIN and OKN arrive as
-MCP servers. SetGo arrives as a skill that calls the SetGo command.
+`extensions/load-skills.ts` contributes `skills/`. AIDRIN, OKN and Science
+Made Readable arrive as MCP servers. SetGo arrives as a skill that calls the SetGo command.
 
 ## AIDRIN
 
@@ -121,3 +121,30 @@ Tools exposed by that server on 2026-09-26:
 | `okn_create_chat_transcript` | Reproducible transcript of a chat |
 | `okn_create_reproducibility_record` | Header plus reproducibility record |
 | `okn_read_latest_chat_transcript` | Most recent rendered transcript |
+
+## Science Made Readable
+
+[Science Made Readable](https://sciencemadereadable.com/?api) runs a free,
+read-only literature search MCP server over OpenAlex titles and abstracts
+(English abstracts, no full texts). It searches papers by meaning or by exact
+words, reads their records, finds similar papers, and walks citations. It needs
+no API key and is rate-limited to 30 calls per minute per address.
+
+| | |
+|---|---|
+| Web | https://sciencemadereadable.com/?api |
+| MCP endpoint | https://api.sciencemadereadable.com/mcp |
+| Data | [OpenAlex](https://openalex.org/) titles and abstracts |
+
+The `sciencemadereadable` entry in `.mcp.json` is a remote Streamable HTTP
+server with lazy startup and authentication off, following the `okn` entry.
+The same `./bin/pi` launch that picks up AIDRIN and OKN picks up this server.
+
+Tools reported by `tools/list` on 2026-10-12 (all marked read-only):
+
+| Tool | What it does |
+|---|---|
+| `search_papers` | Search titles and abstracts by meaning or by exact words |
+| `get_papers` | Full records of up to 20 papers: identifiers, authors, venue, citations |
+| `find_similar_papers` | Papers closest in meaning to one paper |
+| `citation_walk` | Walk the citation graph from one paper |
