@@ -26,7 +26,7 @@ server in this repo (`uv run --group aidrin aidrin-mcp`).
 | Keep one series | A short PyArrow filter (below) | One site, one whole-day lead, one row per target date. |
 | Score that file | AIDRIN MCP tools | JSON for quality, structure, and (only if you name the columns) fairness or privacy. |
 
-`./bin/pi` starts in the repo root, so `.mcp.json` launches the server as the
+`./bin/pi` starts in the repo root, so `.pi/mcp.json` launches the server as the
 same user. Pass an **absolute path**. A URL, an `s3://` string, or a path that
 exists only on another machine is invisible to the server. No Globus Compute
 profile is configured here (`list_remote_profiles` is empty); omit `endpoint`

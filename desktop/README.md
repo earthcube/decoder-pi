@@ -24,6 +24,6 @@ npm run tauri build
 
 That typechecks and bundles the page, then compiles the Rust window in release mode. The binary is `desktop/src-tauri/target/release/desktop`. Installable packages, when the bundler finishes, land under `desktop/src-tauri/target/release/bundle/`. On Linux the config asks for every package type, so that step also wants the usual `.deb`, `.rpm`, and AppImage tools. The binary itself is already built before that packaging step.
 
-The release binary is only the window. Skills, `extensions/load-skills.ts`, `.mcp.json`, and the Python tools stay in this checkout. Run the binary from the checkout, or set `DECODER_PI_ROOT` to it. It still launches `bin/pi` and expects `pi` and `uv` on `PATH`.
+The release binary is only the window. Skills, `extensions/load-skills.ts`, `.pi/mcp.json`, and the Python tools stay in this checkout. Run the binary from the checkout, or set `DECODER_PI_ROOT` to it. It still launches `bin/pi` and expects `pi` and `uv` on `PATH`.
 
 Sessions are the normal Pi session files for this repo, so a later `./bin/pi --continue` can pick up a desktop conversation. Closing the window closes Pi's stdin and waits for that process to exit.

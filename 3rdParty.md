@@ -1,7 +1,7 @@
 # Third-party efforts
 
 This harness does not reimplement these projects. `./bin/pi` starts Pi in the
-repo root, so `.mcp.json` is discovered as project MCP config, and
+repo root, so `.pi/mcp.json` is discovered as project MCP config, and
 `extensions/load-skills.ts` contributes `skills/`. AIDRIN, OKN and Science
 Made Readable arrive as MCP servers. SetGo arrives as a skill that calls the SetGo command.
 
@@ -21,7 +21,7 @@ the MCP server, not the web app.
 
 AIDRIN is an optional uv group, `aidrin[mcp]` in `pyproject.toml`. A default
 `uv sync` does not install it. After `uv sync --group aidrin`, the `aidrin`
-entry in `.mcp.json` starts `uv run --group aidrin aidrin-mcp` as a stdio
+entry in `.pi/mcp.json` starts `uv run --group aidrin aidrin-mcp` as a stdio
 server for the session. Catalog skills find a file (for example one ecoforecast
 parquet or a deepoceans CSV). AIDRIN scores that file. A worked session is in
 [`AIDRIN_EXAMPLE.md`](AIDRIN_EXAMPLE.md).
@@ -87,7 +87,7 @@ assistant list those graphs, read their schemas, and query them with SPARQL.
 | Registry | https://registry.okn.us/ |
 | GitHub | https://github.com/sbl-sdsc/mcp-proto-okn |
 
-The harness does not clone that repository. The `okn` entry in `.mcp.json` is
+The harness does not clone that repository. The `okn` entry in `.pi/mcp.json` is
 a remote server, `https://apps.okn.us/okn-mcp-dev/mcp`, with lazy startup and
 authentication off. That is the hosted endpoint documented on
 [okn.us/mcp](https://okn.us/mcp). The same `./bin/pi` launch that picks up
@@ -136,7 +136,7 @@ no API key and is rate-limited to 30 calls per minute per address.
 | MCP endpoint | https://api.sciencemadereadable.com/mcp |
 | Data | [OpenAlex](https://openalex.org/) titles and abstracts |
 
-The `sciencemadereadable` entry in `.mcp.json` is a remote Streamable HTTP
+The `sciencemadereadable` entry in `.pi/mcp.json` is a remote Streamable HTTP
 server with lazy startup and authentication off, following the `okn` entry.
 The same `./bin/pi` launch that picks up AIDRIN and OKN picks up this server.
 

@@ -45,8 +45,8 @@ flowchart LR
 
 ## Launch
 
-`./bin/pi` always `cd`s to the repo root before starting Pi so project-root
-`.mcp.json` (AIDRIN) is discovered even if you invoke the launcher from another
+`./bin/pi` always `cd`s to the repo root before starting Pi so the project MCP
+config in `.pi/mcp.json` (AIDRIN, OKN, Science Made Readable) is discovered even if you invoke the launcher from another
 directory.
 
 ### Desktop window
@@ -64,7 +64,7 @@ uv sync --group aidrin
 # then in-session: `list_metrics` / `run_aidrin_metric` on a small CSV
 ```
 
-`.mcp.json` runs `uv run --group aidrin aidrin-mcp` (stdio). That process has
+`.pi/mcp.json` runs `uv run --group aidrin aidrin-mcp` (stdio). That process has
 **no** web-style path allowlist — it can read whatever the launching user can.
 Leave the separate `[agentic]` extra off unless you intentionally want that
 pipeline (needs an API key).
