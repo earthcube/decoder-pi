@@ -7,7 +7,8 @@ Pi 0.85.1+ is required (`pi` on `PATH`). Your existing provider auth, models, an
 ## High level view
 
 A visual overview of what is here follows.  The harness is based on Pi and 
-loads services from DeCODER, AIDRIN, SetGo and Open Knowledge Network (OKN).  Once loaded the quickest way to see what is possible is to try the [examples](./EXAMPLES.md).  
+loads services from DeCODER, AIDRIN, SetGo, Open Knowledge Network (OKN) and
+Science Made Readable (literature search).  Once loaded the quickest way to see what is possible is to try the [examples](./EXAMPLES.md).  
 
 ```mermaid
 
@@ -21,6 +22,7 @@ flowchart LR
         direction TB
         DeCODER
         OKN
+        SMR["Science Made Readable\n(literature)"]
         AIDRIN["AIDRIN\n(stdio)"]
     end
 

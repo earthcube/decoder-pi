@@ -10,6 +10,11 @@
       "url": "https://apps.okn.us/okn-mcp-dev/mcp",
       "lifecycle": "lazy",
       "auth": false
+    },
+    "sciencemadereadable": {
+      "url": "https://api.sciencemadereadable.com/mcp",
+      "lifecycle": "lazy",
+      "auth": false
     }
   }
 }
