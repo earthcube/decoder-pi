@@ -1,0 +1,46 @@
+# IODP Expedition 385 (Guaymas Basin) - cores held at the Gulf Coast Repository
+# One URL per line. Blank lines and lines starting with # are ignored.
+
+# --- Images ---
+https://doi.org/10.5281/zenodo.7705638
+https://doi.org/10.5281/zenodo.7709623
+https://doi.org/10.5281/zenodo.7706667
+https://doi.org/10.5281/zenodo.7706701
+https://doi.org/10.5281/zenodo.7713057
+https://doi.org/10.5281/zenodo.7705345
+https://doi.org/10.5281/zenodo.7713045
+
+# --- Description & curation ---
+https://doi.org/10.5281/zenodo.7708674
+https://doi.org/10.5281/zenodo.7705481
+https://doi.org/10.5281/zenodo.7703126
+https://doi.org/10.5281/zenodo.7708649
+https://doi.org/10.5281/zenodo.7708672
+
+# --- Physical properties ---
+https://doi.org/10.5281/zenodo.7706861
+https://doi.org/10.5281/zenodo.7708625
+https://doi.org/10.5281/zenodo.7706848
+https://doi.org/10.5281/zenodo.7708657
+https://doi.org/10.5281/zenodo.7706843
+https://doi.org/10.5281/zenodo.7708662
+
+# --- Chemistry & X-ray ---
+https://doi.org/10.5281/zenodo.7708617
+https://doi.org/10.5281/zenodo.7708707
+https://doi.org/10.5281/zenodo.7846641
+https://doi.org/10.5281/zenodo.7708633
+https://doi.org/10.5281/zenodo.7850920
+
+# --- Magnetism ---
+https://doi.org/10.5281/zenodo.7706865
+https://doi.org/10.5281/zenodo.7708598
+
+# --- Proceedings volume (direct file) ---
+https://publications.iodp.org/proceedings/385/385.zip
+
+# --- Legacy portals (web pages/apps; saved as HTML snapshots only) ---
+https://web.iodp.tamu.edu/janusweb/links/links_all.shtml
+https://web.iodp.tamu.edu/LORE/
+https://iodp.tamu.edu/database/globus.html
+https://shinylaurel.com/shiny/DSDP_data_access/

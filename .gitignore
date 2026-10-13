@@ -8,3 +8,4 @@ __pycache__/
 !.pi/mcp.json
 .uv/
 runs/
+data/gcr_downloads/
