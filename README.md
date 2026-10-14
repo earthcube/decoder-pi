@@ -45,8 +45,8 @@ flowchart LR
 
 ## Launch
 
-`./bin/pi` always `cd`s to the repo root before starting Pi so project-root
-`.mcp.json` (AIDRIN) is discovered even if you invoke the launcher from another
+`./bin/pi` always `cd`s to the repo root before starting Pi so the project MCP
+config in `.pi/mcp.json` (AIDRIN, OKN, Science Made Readable) is discovered even if you invoke the launcher from another
 directory.
 
 ### Desktop window
@@ -64,7 +64,7 @@ uv sync --group aidrin
 # then in-session: `list_metrics` / `run_aidrin_metric` on a small CSV
 ```
 
-`.mcp.json` runs `uv run --group aidrin aidrin-mcp` (stdio). That process has
+`.pi/mcp.json` runs `uv run --group aidrin aidrin-mcp` (stdio). That process has
 **no** web-style path allowlist — it can read whatever the launching user can.
 Leave the separate `[agentic]` extra off unless you intentionally want that
 pipeline (needs an API key).
@@ -120,7 +120,7 @@ initial prompt) pass through `./bin/pi`.
 
 Inside a session: `/skill:sparql`, `/skill:catalog-plot`, `/skill:catalog-map`,
 `/skill:forecast-inventory`, `/skill:forecast-parquet`, `/skill:surface-inventory`,
-`/skill:hydrography-tiles`, `/skill:geotiff-list`.
+`/skill:hydrography-tiles`, `/skill:geotiff-list`, `/skill:handoff`.
 
 ## Layout
 
@@ -136,7 +136,8 @@ decoder-pi/
 │   ├── forecast-parquet/          # parquet CRPS / mean, or one lead
 │   ├── surface-inventory/         # earthsurface catalog
 │   ├── hydrography-tiles/         # 20° hydrography tile index
-│   └── geotiff-list/              # raster URL table (no download)
+│   ├── geotiff-list/              # raster URL table (no download)
+│   └── handoff/                   # human-gated session handoff record
 ├── pyproject.toml                 # SPARQLWrapper + matplotlib + pyarrow
 └── AGENTS.md
 ```
