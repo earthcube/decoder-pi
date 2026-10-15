@@ -120,7 +120,7 @@ initial prompt) pass through `./bin/pi`.
 
 Inside a session: `/skill:sparql`, `/skill:catalog-plot`, `/skill:catalog-map`,
 `/skill:forecast-inventory`, `/skill:forecast-parquet`, `/skill:surface-inventory`,
-`/skill:hydrography-tiles`, `/skill:geotiff-list`, `/skill:handoff`.
+`/skill:hydrography-tiles`, `/skill:geotiff-list`, `/skill:handoff`, `/skill:sparqld`.
 
 ## Layout
 
@@ -130,6 +130,7 @@ decoder-pi/
 ├── extensions/load-skills.ts      # resources_discover → skills/
 ├── skills/
 │   ├── sparql/                    # SPARQL 1.1 CLI + templates
+│   ├── sparqld/                   # local RDF files as a read-only SPARQL endpoint
 │   ├── catalog-plot/              # bars, depth hist/ranges
 │   ├── catalog-map/               # lat/lon, box, WKT, coastlines, near
 │   ├── forecast-inventory/        # ecoforecast catalog
@@ -162,6 +163,14 @@ uv run python skills/sparql/scripts/sparql_query.py run \
 ```
 
 See `skills/sparql/SKILL.md` for the cookbook and remaining templates.
+
+## sparqld skill (local RDF files)
+
+Serves a folder of RDF files (for example `data/cchdo/`) as a read-only SPARQL
+endpoint at `http://127.0.0.1:7737/` with [sparqld](https://sparqld.iolanta.tech/)
+(`cargo install sparqld`, rustc 1.88+). Without Rust, `skills/sparqld/scripts/local_sparql.py`
+does the same with pyoxigraph and reads `.gz` directly. The `sparql` templates
+work against either via `--endpoint http://127.0.0.1:7737/`. See `skills/sparqld/SKILL.md`.
 
 ## Example Pi prompts
 

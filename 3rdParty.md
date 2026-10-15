@@ -3,7 +3,8 @@
 This harness does not reimplement these projects. `./bin/pi` starts Pi in the
 repo root, so `.pi/mcp.json` is discovered as project MCP config, and
 `extensions/load-skills.ts` contributes `skills/`. AIDRIN, OKN and Science
-Made Readable arrive as MCP servers. SetGo arrives as a skill that calls the SetGo command.
+Made Readable arrive as MCP servers. SetGo arrives as a skill that calls the SetGo command. sparqld arrives as a skill
+that runs the sparqld binary (or a pyoxigraph fallback).
 
 ## AIDRIN
 
@@ -148,3 +149,24 @@ Tools reported by `tools/list` on 2026-10-12 (all marked read-only):
 | `get_papers` | Full records of up to 20 papers: identifiers, authors, venue, citations |
 | `find_similar_papers` | Papers closest in meaning to one paper |
 | `citation_walk` | Walk the citation graph from one paper |
+
+## sparqld
+
+[sparqld](https://sparqld.iolanta.tech/) serves a directory of RDF files
+(JSON-LD, YAML-LD, Markdown-LD, N-Triples, N-Quads, Turtle, TriG) as a live,
+read-only SPARQL endpoint at `http://127.0.0.1:7737/`. Files stay the source of
+truth; there is no import step. It does not read `.gz` files.
+
+| | |
+|---|---|
+| Docs | https://sparqld.iolanta.tech/ |
+| Agents | https://sparqld.iolanta.tech/reference/agents/ |
+| GitHub | https://github.com/iolanta-tech/sparqld |
+| Crate | https://crates.io/crates/sparqld |
+| License | Apache-2.0 OR MIT |
+
+`skills/sparqld/` adapts the upstream `skills/sparqld` skill. Install with
+`cargo install sparqld` (rustc 1.88+); the optional `sq` client installs with
+`cargo install --git https://github.com/ktk/sq`. Without Rust, the skill's
+`scripts/local_sparql.py` loads the same files into pyoxigraph (or rdflib).
+Example data: `data/cchdo/` (see its README).
